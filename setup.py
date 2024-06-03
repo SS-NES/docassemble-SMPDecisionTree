@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 
 setup(name='docassemble.SPMDecisionTree',
       version='0.0.2',
-      description=('A Software Management Plan questionnaire for docassemble'),
+      description=('A somewhat opinionated Software Management Plan creation guide'),
       long_description='# Software Management Plan\r\n\r\nThis is a questionnaire package for a Software Management Plan (SMP). It is used with the `docassemble` framework: https://docassemble.org .',
       long_description_content_type='text/markdown',
       author='Ole Mussmann',
