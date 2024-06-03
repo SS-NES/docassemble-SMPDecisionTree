@@ -23,6 +23,7 @@ code: |
   community = False
   reuse = False
   smp_version = "0.1.0"
+  release_date = today()
 ---
 objects:
   - authors: |
@@ -194,15 +195,6 @@ subquestion: |
 fields:
   - Version: smp_version
     default: 0.1.0
----
-mandatory: True
-question: Software Management Plan Release Date
-subquestion: |
-  What is the release date of the Software Management Plan?
-fields:
-  - Release Date: release_date
-    datatype: date
-    default: ${ today() }
 ---
 mandatory: True
 question: |
