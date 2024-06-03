@@ -43,7 +43,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
                 out.setdefault(package, []).append(prefix+name)
     return out
 
-setup(name='docassemble.SPMDecisionTree',
+setup(name='docassemble.SMPDecisionTree',
       version='0.0.2',
       description=('A somewhat opinionated Software Management Plan creation guide'),
       long_description='# Software Management Plan\r\n\r\nThis is a questionnaire package for a Software Management Plan (SMP). It is used with the `docassemble` framework: https://docassemble.org .',
@@ -56,6 +56,6 @@ setup(name='docassemble.SPMDecisionTree',
       namespace_packages=['docassemble'],
       install_requires=[],
       zip_safe=False,
-      package_data=find_package_data(where='docassemble/SPMDecisionTree/', package='docassemble.SPMDecisionTree'),
+      package_data=find_package_data(where='docassemble/SMPDecisionTree/', package='docassemble.SMPDecisionTree'),
      )
 
