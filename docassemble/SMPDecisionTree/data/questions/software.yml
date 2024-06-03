@@ -297,13 +297,29 @@ terms:
      Typical versioning schemes are [semver](https://semver.org/) or [calver](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
 
 fields:
-  - Version Control: version_control
-    #default: |
-    #  very version, much control
-    hint: |
-      git, using SemVer
+  - Version Scheme: version_scheme
+    choices:
+      - SemVer
+      - CalVer
+      - Other
+  - Version Scheme Explanation: version_scheme_explanation
+    show if:
+      variable: version_scheme
+      is: "Other"
+    hint: Please explain which other version scheme you will use, or why you will not use any.
     input type: area
-    rows: 10
+  - Version Control: version_control
+    choices:
+      - Git
+      - Mercurial
+      - SVN
+      - Other
+  - Version Scheme Explanation: version_control_explanation
+    show if:
+      variable: version_control
+      is: "Other"
+    hint: Please explain which other version control system you will use, or why you will not use any.
+    input type: area
 ---
 mandatory: public or reuse or multi_user
 question: |
@@ -1193,7 +1209,7 @@ attachment code: |
 attachment:
   name: Human Readable Software Management Plan for `${ software_name }`
   filename: Software_Management_Plan-${ space_to_underscore(software_name) }-${ release_date.strftime('%y_%m_%d') }
-  docx template file: SMP_decision_tree_template_3.docx
+  docx template file: SMP_decision_tree_template_4.docx
   valid formats:
   #  - md
     - docx
