@@ -335,56 +335,18 @@ mandatory: public
 question: |
   Licensing and Compatibility
 subquestion: |
-  What type of license will `${ software_name }` have? If you want to choose one yourself, you can use [choosealicense.com](https://choosealicense.com/) or [tldrlegal.com](https://www.tldrlegal.com/) as inspiration. You can find some guidance and common issues explained under "Help" above 👆. Often your employer or department has an opinion on this, so make sure to consult your stakeholders or legal department.
+  What type of license will `${ software_name }` have? Ask your PI, research group, department, or legal department (in that order) for what is recommended for your situation. This will depend on what is specified by your research project, what is common in your field and what your institute allows.
 
-  If you don't choose an [SPDX license](https://spdx.org/licenses/), please choose "Other" and explain your choice in the "Explanation" field.
+  If you want to choose one yourself, you can use [choosealicense.com](https://choosealicense.com/) or [tldrlegal.com](https://www.tldrlegal.com/) as inspiration.
+
+  If you don't choose one of the recommended licenses, please choose "Other" and explain your choice in the "Explanation" field.
 
 help: |
   > ⚠️
   > We are not lawyers. This is not legal advice. Please consult your legal department instead.
-  
-  ## The Gist
+  > ⚠️ 
 
-  The license should be as open as possible, and as closed as necessary. Software licenses must be compatible with the license of external components (dependencies, libraries, etc.) that the software uses. _Their_ terms may dictate how "restricted" _your_ derived software must be. Your software must be of the same level of "openness", or more restrictive. Likewise, if you create a library, choose a license open enough that other people can use it in their code. Otherwise they may be forced to pick a license outside the ecosystem's preference, since _their_ derived software must be of the same level of "openness" as _your_ software, or more restrictive.
-
-  > 💡
-  > It's usually a good idea to choose the domimant license in your ecosystem.
-
-  For an indication of how the most popular software licenses relate to each other, have a look at this License Compatibility Chart below 👇. "Public Domain" is the most open, with no obligations attached. Arrows indicate the direction of tightening restrictions.
-
-  <img alt="License Compatibility Chart" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Floss-license-slide-image.svg" width="100%" /><br>
-  <span style="font-size: smaller;"><a href="https://commons.wikimedia.org/wiki/File:Floss-license-slide-image.svg">Source</a>, by David A. Wheeler, et al. under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0 Deed</a></span>
-
-  ## When Do License Restrictions Trigger?
-  
-  In the above paragraph, we have mentioned "may" a lot. Do license restrictions apply here or not? If you have to adhere to some external code's license terms or not, depends on their license and how "integrated" it is with your own code.
-  
-  ### Maximum Integration
-  If you publish (part of) someone else's code, then you have to adhere to their license terms. This could be because you copied and pasted their code into your project. Or because you publish a software package or container that packages their libraries.
-
-  > 🚨
-  > Follow the license terms of the software you use.
-
-  ### Medium Integration
-  If you import an external library in your project, it depends on it's license type what you need to follow.
-  
-  More permissive licenses, like MIT or Apache 2.0 consider this degree of separation strong enough and release you from their obligations. You are then free to choose your license.
-  
-  More reciprocal (or "copyleft") licenses like the GPL _do_ consider this degree of entanglement close enough to enforce their terms on your software.
-
-  > ⚠️
-  > If you have to follow the license terms depend on the type of license.
-  
-  ### No Integration
-  Even the most restrictive licenses are satisfied if the external software you use has its own process and only indirectly communicates with yours, for example via an ABI (Application Binary Interface).
-  
-  > ✅
-  > You are not bound by other's licensing terms.
-
-  
-  ## Example Pitfalls
-  - Say you write a Python script and want to publish it under a permissive Apache 2.0 license. However, one of the libraries you use is licensed under the GPL, which is a strongly reciprocal, or "copyleft", license. Importing the library is not a strong enough degree of separation, which means you need to follow the GPL license terms. In order to publish your code, you either _must_ publish it instead under the GPL license or a more restrictive one, or you need to use a different external library.
-  - You want to package and ship some project code which includes the source code of your libraries. It could be that you package your project as a single executable binary, or something like a docker container. In this case you include and distribute the direct source code of your libraries, which means that you have to check and obey the license terms of all your libraries.
+  For more defailed information, please refer to [The Turing Way chapter on Licensing](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license)
 
 fields:
   - License: software_license
