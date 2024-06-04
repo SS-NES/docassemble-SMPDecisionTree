@@ -358,6 +358,7 @@ fields:
     - 'MIT (MIT License)': 'MIT (MIT License)'
     - 'MPL-2.0 (Mozilla Public License 2.0)': 'MPL-2.0 (Mozilla Public License 2.0)'
     - 'Other': 'Other'
+    - 'To be determined': 'To be determined'
   - Explanation: license_explanation
     show if:
       variable: software_license
