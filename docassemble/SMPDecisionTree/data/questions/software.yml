@@ -1196,7 +1196,7 @@ attachment code: |
 ---
 attachment:
   name: Human Readable Software Management Plan for `${ software_name }`
-  filename: Software_Management_Plan_${ space_to_underscore(software_name) }
+  filename: Software_Management_Plan-${ space_to_underscore(software_name) }-${ release_date.strftime('%y_%m_%d') }
   docx template file: SMP_decision_tree_template_3.docx
   valid formats:
   #  - md
