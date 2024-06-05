@@ -337,16 +337,24 @@ question: |
 subquestion: |
   What type of license will `${ software_name }` have? Ask your PI, research group, department, or legal department (in that order) for what is recommended for your situation. This will depend on what is specified by your research project, what is common in your field and what your institute allows.
 
-  If you want to choose one yourself, you can use [choosealicense.com](https://choosealicense.com/) or [tldrlegal.com](https://www.tldrlegal.com/) as inspiration.
+  For more defailed information, please refer to [The Turing Way chapter on Licensing](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license).
 
   If you don't choose one of the recommended licenses, please choose "Other" and explain your choice in the "Explanation" field.
+
+  If you are unable to talk to the relevant people to determine which license your software will have, you can choose "To be determined" and replace it once you have your answer.
 
 help: |
   > ⚠️
   > We are not lawyers. This is not legal advice. Please consult your legal department instead.
   > ⚠️ 
 
-  For more defailed information, please refer to [The Turing Way chapter on Licensing](https://book.the-turing-way.org/reproducible-research/licensing.html?highlight=license)
+  If you want to choose one yourself, you can use [choosealicense.com](https://choosealicense.com/) or [tldrlegal.com](https://www.tldrlegal.com/) as inspiration.
+
+  For an indication of how the most popular software licenses relate to each other, have a look at this License Compatibility Chart below 👇.
+  "Public Domain" is the most open, with no obligations attached, while "AGPL-3.0" is the most restrictive.
+  Arrows indicate the direction of tightening restrictions. This means that if you are working on code already under a license in this table, you have to release it under a license that is **equally or more restrictive**, i.e., following the directions of the arrows.
+  <img alt="License Compatibility Chart" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Floss-license-slide-image.svg" width="100%" /><br>
+  <span style="font-size: smaller;"><a href="https://commons.wikimedia.org/wiki/File:Floss-license-slide-image.svg">Source</a>, by David A. Wheeler, et al. under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0 Deed</a></span>
 
 fields:
   - License: software_license
