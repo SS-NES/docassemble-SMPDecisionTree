@@ -24,6 +24,7 @@ code: |
   reuse = False
   smp_version = "0.1.0"
   release_date = today()
+  show_developer_docs = False
 ---
 objects:
   - authors: |
@@ -49,14 +50,14 @@ question: |
   Hi!
 subquestion: |
   Welcome to the Software Management Plan ({SMP}) Decision Tree! In this tool, we will ask your some questions about your research software. Based on your answers, we will suggest which best practices are most relevant for you to consider. For each best practice this tool will provide some relevant resources and examples on how to implement them.
-  
+
   When completed, you can download an overview of your answers as your SMP to serve as reference for yourself and as an overview for any technical support staff you may consult with later.
 terms:
   SMP: |
     SMP: Software Management Plan; terms that deserve some context will be explained is these pop-ups.
 help: |
   Nice, you discovered the help button. 🥳 Questions that benefit from some context will offer a Help ⭐ button that explain the question in more detail or just give some background information  for you to learn from.
-  
+
   You can go back to the questionnaire now up here. 👆
 buttons:
   - Let's do this!: continue
@@ -99,7 +100,7 @@ question: |
   Public
 subquestion: |
   Do you plan to make `${ software_name }` publicly available?
-  
+
   With this question, you answer if you plan on making your software available on a searchable and accessible platform where others can find it. If so, you will have to also think about what conditions to make `${ software_name }` available under, e.g. its license.
 
   If you do not plan to make it publicly available, please provide your reasons.
@@ -114,7 +115,14 @@ fields:
     hint: Please explain why you will not publish your code
     input type: area
 ---
-mandatory: True
+reconsider: True
+code: |
+  show_developer_docs = reuse or multi_user
+depends on:
+  - reuse
+  - multi_user
+---
+mandatory: not multi_user
 question: |
   Reuse/Reproduce
 subquestion: |
@@ -123,12 +131,12 @@ subquestion: |
   With this question, you answer if your software can be reused at a later stage or on a different project. If so, documentation needs to be provided in order to facilitate reuse.
 
   This question also encompasses whether the software (or suite of scripts/notebooks/data) is intended to be entirely reproducible. This is particularly relevant when the software and its outputs are integral to a peer-reviewed publication. In such instances, we recommend adding a data management plan to describe the underlying input and output data, in collaboration with your local Data Competence Center (DCC) or Publisher.
-  
+
   <details>
     <summary>Decision Help</summary>
     <br>
     <h5>Example projects that would answer “yes” here</h5>
-     
+
     <ul>
       <li>Scripts or software that will be reused internally in your collaboration.</li>
       <li>Software that provides a certain type of standard/common analysis given a certain type of input data (i.e. emission line measurements).</li>
@@ -180,11 +188,11 @@ question: |
 subquestion: |
   Does `${ software_name }` have, or do you plan to build a community around it?
   With this question, you answer if you expect a community to form around your software. With community we mean that other people from outside your direct collaborators or contacts are using or working on the software (semi-)autonomously. If so, you will need to plan for the software’s long-term sustainability and identify potential risks to its proper maintenance.
-  
+
   <details>
   <summary>Decision Help</summary>
   <h5>Example projects that would answer “yes” here</h5>
-  
+
   <ul>
     <li>A jupyter notebook extension that enables researchers across disciplines to prepare, upload and download datasets from Zenodo, and other research data repositories: <a href="https://fairly.readthedocs.io">fairly.readthedocs.io</a></li>
   </ul>
@@ -346,7 +354,7 @@ subquestion: |
 help: |
   > ⚠️
   > We are not lawyers. This is not legal advice. Please consult your legal department instead.
-  
+
   ## The Gist
 
   The license should be as open as possible, and as closed as necessary. Software licenses must be compatible with the license of external components (dependencies, libraries, etc.) that the software uses. _Their_ terms may dictate how "restricted" _your_ derived software must be. Your software must be of the same level of "openness", or more restrictive. Likewise, if you create a library, choose a license open enough that other people can use it in their code. Otherwise they may be forced to pick a license outside the ecosystem's preference, since _their_ derived software must be of the same level of "openness" as _your_ software, or more restrictive.
@@ -360,9 +368,9 @@ help: |
   <span style="font-size: smaller;"><a href="https://commons.wikimedia.org/wiki/File:Floss-license-slide-image.svg">Source</a>, by David A. Wheeler, et al. under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0 Deed</a></span>
 
   ## When Do License Restrictions Trigger?
-  
+
   In the above paragraph, we have mentioned "may" a lot. Do license restrictions apply here or not? If you have to adhere to some external code's license terms or not, depends on their license and how "integrated" it is with your own code.
-  
+
   ### Maximum Integration
   If you publish (part of) someone else's code, then you have to adhere to their license terms. This could be because you copied and pasted their code into your project. Or because you publish a software package or container that packages their libraries.
 
@@ -371,21 +379,21 @@ help: |
 
   ### Medium Integration
   If you import an external library in your project, it depends on it's license type what you need to follow.
-  
+
   More permissive licenses, like MIT or Apache 2.0 consider this degree of separation strong enough and release you from their obligations. You are then free to choose your license.
-  
+
   More reciprocal (or "copyleft") licenses like the GPL _do_ consider this degree of entanglement close enough to enforce their terms on your software.
 
   > ⚠️
   > If you have to follow the license terms depend on the type of license.
-  
+
   ### No Integration
   Even the most restrictive licenses are satisfied if the external software you use has its own process and only indirectly communicates with yours, for example via an ABI (Application Binary Interface).
-  
+
   > ✅
   > You are not bound by other's licensing terms.
 
-  
+
   ## Example Pitfalls
   - Say you write a Python script and want to publish it under a permissive Apache 2.0 license. However, one of the libraries you use is licensed under the GPL, which is a strongly reciprocal, or "copyleft", license. Importing the library is not a strong enough degree of separation, which means you need to follow the GPL license terms. In order to publish your code, you either _must_ publish it instead under the GPL license or a more restrictive one, or you need to use a different external library.
   - You want to package and ship some project code which includes the source code of your libraries. It could be that you package your project as a single executable binary, or something like a docker container. In this case you include and distribute the direct source code of your libraries, which means that you have to check and obey the license terms of all your libraries.
@@ -1027,46 +1035,43 @@ fields:
 ---
 mandatory: public or reuse
 question: |
-  User Documentation
-subquestion: |
-  How will `${ software_name }` be documented for users?
-
-  Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
+  Documentation
 
 fields:
-  - User Documentation: user_documentation
-    #default: very user doc
+  - note: |
+      **User Documentation**
+
+      How will `${ software_name }` be documented for users?
+
+      Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
+  - no label: user_documentation
     hint: The documentation is part of the repository and will be generated with each release. An automated process publishes each version at https://sky-scanner.readthedocs.com
     input type: area
     rows: 10
----
-mandatory: reuse
-question: |
-  Developer Documentation
-subquestion: |
-  How will `${ software_name }` be documented for future developers?
+  - note: |
+      **Developer Documentation**
 
-  Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
+      How will `${ software_name }` be documented for future developers?
 
-fields:
-  - Developer Documentation: developer_documentation
-    #default: very dev doc
-    hint: The deployment documentation is part of the repository. It is a file called `README.dev.md`.
+      Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
+    show if:
+      variable: show_developer_docs
+      is: true
+  - no label: developer_documentation
+    hint: The developer documentation is part of the repository. It is a file called `README.dev.md`.
     input type: area
     rows: 10
----
-mandatory: public or reuse
-question: |
-  Deployment Documentation
-subquestion: |
-  How will the installation requirements, deployment- and testing instructions of `${ software_name }` be documented?
+    show if:
+      variable: show_developer_docs
+      is: true
+  - note: |
+      **Deployment Documentation**
 
-  Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
+      How will the installation requirements, deployment- and testing instructions of `${ software_name }` be documented?
 
-fields:
-  - Deployment Documentation: deployment_documentation
-    #default: very deploy doc
-    hint: The developer documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
+      Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
+  - no label: deployment_documentation
+    hint: The deployment documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
     input type: area
     rows: 10
 ---
@@ -1075,7 +1080,7 @@ question: |
   Testing
 subquestion: |
   How will your software be tested? Please provide a link to automated testing results, if available.
-  
+
   Incorporate tests to ensure your software continues to work as intended. Different types of testing (unit, functional, integration, linting, typing, regression, etc.) could be used. Tests in turn should also be documented. Coverage tools should also be used to assess the extent of the tested code.
 
 fields:
@@ -1123,7 +1128,7 @@ question: |
 subquestion: |
   Make sure there are arrangements in place for the maintenance and reuse of `${ software_name }`. Whenever suitable, develop a retirement strategy for your software. Is there an organization or company that can take over the development?
 
-  How do you plan to procure long term maintenance of your software? 
+  How do you plan to procure long term maintenance of your software?
 
 fields:
   - Maintenance: maintenance
@@ -1144,9 +1149,9 @@ subquestion: |
   - A community will co-develop the software and help maintain it afterwards.
   - Organizing workshops and hands-on user training to create or extend a community around the software.
   - The software will be developed as part of an overarching software suite used in other (research) projects.
-  - A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.  
-  - Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media. 
-  - Do you have the resources to procure storage and computer infrastructure required for maintaining the software. 
+  - A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.
+  - Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media.
+  - Do you have the resources to procure storage and computer infrastructure required for maintaining the software.
 
 fields:
   - Sustainability: sustainability
@@ -1349,13 +1354,13 @@ attachment:
 code: |
   import copy
   import json
-  
+
   user_vars = copy.deepcopy(all_variables())
   del user_vars["url_args"]
   del user_vars["session_local"]
   del user_vars["user_local"]
   del user_vars["device_local"]
-  
+
   user_vars_string = json.dumps(user_vars, sort_keys=True, indent=4)
 ---
 attachment:
