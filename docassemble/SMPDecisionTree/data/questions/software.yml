@@ -23,6 +23,7 @@ code: |
   community = False
   reuse = False
   smp_version = "0.1.0"
+  show_developer_docs = False
 ---
 objects:
   - authors: |
@@ -101,6 +102,13 @@ subquestion: |
   
 yesno: multi_user
 
+---
+reconsider: True
+code: |
+  show_developer_docs = reuse or multi_user
+depends on:
+  - reuse
+  - multi_user
 ---
 mandatory: not multi_user
 question: |
@@ -1023,46 +1031,43 @@ fields:
 ---
 mandatory: public or reuse or multi_user
 question: |
-  User Documentation
-subquestion: |
-  How will `${ software_name }` be documented for users?
-
-  Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
+  Documentation
 
 fields:
-  - User Documentation: user_documentation
-    #default: very user doc
+  - note: |
+      **User Documentation**
+
+      How will `${ software_name }` be documented for users?
+
+      Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
+  - no label: user_documentation
     hint: The documentation is part of the repository and will be generated with each release. An automated process publishes each version at https://sky-scanner.readthedocs.com
     input type: area
     rows: 10
----
-mandatory: reuse or multi_user
-question: |
-  Developer Documentation
-subquestion: |
-  How will `${ software_name }` be documented for future developers?
+  - note: |
+      **Developer Documentation**
 
-  Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
+      How will `${ software_name }` be documented for future developers?
 
-fields:
-  - Developer Documentation: developer_documentation
-    #default: very dev doc
-    hint: The deployment documentation is part of the repository. It is a file called `README.dev.md`.
+      Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
+    show if:
+      variable: show_developer_docs
+      is: true
+  - no label: developer_documentation
+    hint: The developer documentation is part of the repository. It is a file called `README.dev.md`.
     input type: area
     rows: 10
----
-mandatory: public or reuse or multi_user
-question: |
-  Deployment Documentation
-subquestion: |
-  How will the installation requirements, deployment- and testing instructions of `${ software_name }` be documented?
+    show if:
+      variable: show_developer_docs
+      is: true
+  - note: |
+      **Deployment Documentation**
 
-  Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
+      How will the installation requirements, deployment- and testing instructions of `${ software_name }` be documented?
 
-fields:
-  - Deployment Documentation: deployment_documentation
-    #default: very deploy doc
-    hint: The developer documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
+      Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
+  - no label: deployment_documentation
+    hint: The deployment documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
     input type: area
     rows: 10
 ---
