@@ -309,16 +309,12 @@ mandatory: public or reuse or multi_user
 question: |
   Repository
 subquestion: |
-  Should `${ software_name }` be publicly available? The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like GitHub or GitLab.
+  Where do you plan to make your software publicly available? The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com).
 
-  Please provide links to the software if this is already the case. This should be a repository with globally unique, persistent, and resolvable identifiers to each release.
-
-  > ⚠️ If your repository grows so large that you work predominantly with shallow clones, the repository might be the only complete version of your code. In this case, consider backing up your repository together with your data.
-
+  Please provide links to the software if this is already the case.
 
 fields:
   - Repository: repository
-    #default: github/gitlab
     hint: The software will be available at https://uni_gotham.gitlab.com/RowHammer
     input type: area
     rows: 10
