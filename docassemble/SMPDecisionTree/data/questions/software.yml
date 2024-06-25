@@ -299,8 +299,8 @@ terms:
 fields:
   - Version Scheme: version_scheme
     choices:
-      - SemVer
-      - CalVer
+      - Semantic Versioning
+      - Calendar Versioning
       - Other
   - Version Scheme Explanation: version_scheme_explanation
     show if:
