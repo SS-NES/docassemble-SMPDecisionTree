@@ -74,36 +74,25 @@ fields:
 ### Start switch questions
 mandatory: True
 question: |
-  Users, Developers, Creators
+  Public
 subquestion: |
-  Do you expect/foresee `${ software_name }` being used by others, or integrated or modified by other developers, now or in the future?
-
-  With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
-
-  <details>
-  <summary>Decision Help</summary>
-  <br>
-  <h5>Example projects that would answer “yes” here</h5>
-    
-  <ul>
-    <li>A software package that you co-develop with collaborators and plan to make available to your research field.</li>
-    <li>Tools for extracting, transforming and visualizing visuals of architectural design from PDF files: <a href="https://visarchpy.readthedocs.io">VisArchPy</a></li>
-    <li>A web application that researchers use to create questionnaires to collect data from citizens involved in participatory urban planning.</li>
-   </ul>
-
-  <h5>Example projects that would answer “no” here</h5>
-
-  <ul>
-    <li>Single-use script for a power-line data analysis for one paper.</li>
-    <li>A custom BASH application for organizing and backing up millions of files containing results of a weather model running in an in-house computer cluster.</li>
-  </ul>
-  </details>
-  <br>
+  Do you plan to make `${ software_name }` publicly available?
   
-yesno: multi_user
+  With this question, you answer if you plan on making your software available on a searchable and accessible platform where others can find it. If so, you will have to also think about what conditions to make `${ software_name }` available under, e.g. its license.
 
+  If you do not plan to make it publicly available, please provide your reasons.
+
+fields:
+  - "We will make `${ software_name }` publicly available": public
+    datatype: yesnoradio
+  - Explanation: public_explanation
+    show if:
+      variable: public
+      is: False
+    hint: Please explain why you will not publish your code
+    input type: area
 ---
-mandatory: not multi_user
+mandatory: True
 question: |
   Reuse/Reproduce
 subquestion: |
@@ -132,27 +121,38 @@ subquestion: |
   <br>
 yesno: reuse
 ---
-mandatory: True
+mandatory: reuse
 question: |
-  Public
+  Users, Developers, Creators
 subquestion: |
-  Do you plan to make `${ software_name }` publicly available?
-  
-  With this question, you answer if you plan on making your software available on a searchable and accessible platform where others can find it. If so, you will have to also think about what conditions to make `${ software_name }` available under, e.g. its license.
+  Do you expect/foresee `${ software_name }` being used by others, or integrated or modified by other developers, now or in the future?
 
-  If you do not plan to make it publicly available, please provide your reasons.
+  With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
 
-fields:
-  - "We will make `${ software_name }` publicly available": public
-    datatype: yesnoradio
-  - Explanation: public_explanation
-    show if:
-      variable: public
-      is: False
-    hint: Please explain why you will not publish your code
-    input type: area
+  <details>
+  <summary>Decision Help</summary>
+  <br>
+  <h5>Example projects that would answer “yes” here</h5>
+
+  <ul>
+    <li>A software package that you co-develop with collaborators and plan to make available to your research field.</li>
+    <li>Tools for extracting, transforming and visualizing visuals of architectural design from PDF files: <a href="https://visarchpy.readthedocs.io">VisArchPy</a></li>
+    <li>A web application that researchers use to create questionnaires to collect data from citizens involved in participatory urban planning.</li>
+   </ul>
+
+  <h5>Example projects that would answer “no” here</h5>
+
+  <ul>
+    <li>Single-use script for a power-line data analysis for one paper.</li>
+    <li>A custom BASH application for organizing and backing up millions of files containing results of a weather model running in an in-house computer cluster.</li>
+  </ul>
+  </details>
+  <br>
+
+yesno: multi_user
+
 ---
-mandatory: multi_user
+mandatory: reuse and multi_user
 question: |
   Community
 subquestion: |
@@ -321,7 +321,7 @@ fields:
     hint: Please explain which other version control system you will use, or why you will not use any.
     input type: area
 ---
-mandatory: public or reuse or multi_user
+mandatory: public or reuse
 question: |
   Repository
 subquestion: |
@@ -1025,7 +1025,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: public or reuse or multi_user
+mandatory: public or reuse
 question: |
   User Documentation
 subquestion: |
@@ -1040,7 +1040,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: reuse or multi_user
+mandatory: reuse
 question: |
   Developer Documentation
 subquestion: |
@@ -1055,7 +1055,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: public or reuse or multi_user
+mandatory: public or reuse
 question: |
   Deployment Documentation
 subquestion: |
@@ -1070,7 +1070,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: reuse or multi_user
+mandatory: reuse
 question: |
   Testing
 subquestion: |
@@ -1085,7 +1085,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: reuse or multi_user
+mandatory: reuse
 question: |
   Quality
 subquestion: |
@@ -1170,7 +1170,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: true
+mandatory: True
 question: |
   Risk Analysis
 subquestion: |
@@ -1187,7 +1187,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: true
+mandatory: True
 question: |
   Data Management Plan
 subquestion: |
