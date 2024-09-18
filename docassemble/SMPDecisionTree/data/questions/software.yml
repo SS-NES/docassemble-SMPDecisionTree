@@ -24,7 +24,6 @@ code: |
   reuse = False
   smp_version = "0.1.0"
   release_date = today()
-  show_developer_docs = False
 ---
 objects:
   - authors: |
@@ -114,13 +113,6 @@ fields:
       is: False
     hint: Please explain why you will not publish your code
     input type: area
----
-reconsider: True
-code: |
-  show_developer_docs = reuse or multi_user
-depends on:
-  - reuse
-  - multi_user
 ---
 mandatory: not multi_user
 question: |
@@ -1055,15 +1047,13 @@ fields:
 
       Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
     show if:
-      variable: show_developer_docs
-      is: true
+      code: reuse or multi_user
   - no label: developer_documentation
     hint: The developer documentation is part of the repository. It is a file called `README.dev.md`.
     input type: area
     rows: 10
     show if:
-      variable: show_developer_docs
-      is: true
+      code: reuse or multi_user
   - note: |
       **Deployment Documentation**
 
