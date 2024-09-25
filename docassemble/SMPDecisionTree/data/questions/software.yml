@@ -16,12 +16,14 @@ metadata:
     - software
 ---
 features:
+  navigation: False
   progress bar: False
 ---
 mandatory: True
 code: |
   community = False
   reuse = False
+  multi_user = False
   smp_version = "0.1.0"
   release_date = today()
 ---
@@ -114,7 +116,7 @@ fields:
     hint: Please explain why you will not publish your code
     input type: area
 ---
-mandatory: not multi_user
+mandatory: True
 question: |
   Reuse/Reproduce
 subquestion: |
