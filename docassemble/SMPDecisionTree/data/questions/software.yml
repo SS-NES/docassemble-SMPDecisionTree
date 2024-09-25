@@ -1204,7 +1204,7 @@ mandatory: True
 question: |
   Software Management Plan
 attachment code: |
-  [user_smp, machine_smp]
+  [user_smp, machine_smp, template_yml]
 ---
 attachment:
   name: Human Readable Software Management Plan for `${ software_name }`
@@ -1360,9 +1360,17 @@ code: |
 ---
 attachment:
   name: Machine Readable SMP for `${ software_name }`
-  filename: Machine Readable SMP_${ space_to_underscore(software_name) }
+  filename: Machine_Readable_SMP_${ space_to_underscore(software_name) }
   valid formats:
     - md
   description: For automated analysis
   variable name: machine_smp
   content: ${ user_vars_string }
+---
+attachment:
+  name: Input file for the NLeSC Python Template
+  description: When setting up a new Python project using the [NLeSC Copier Template](https://github.com/NLeSC/python-template), this file can be passed using `--data-file=copier_template_answers.yml` to already fill in some questions.
+  filename: copier_template_answers
+  variable name: template_yml
+  raw: True
+  content file: answers.yml
