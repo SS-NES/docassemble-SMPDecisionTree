@@ -16,12 +16,14 @@ metadata:
     - software
 ---
 features:
+  navigation: False
   progress bar: False
 ---
 mandatory: True
 code: |
   community = False
   reuse = False
+  multi_user = False
   smp_version = "0.1.0"
   release_date = today()
 ---
@@ -54,10 +56,6 @@ subquestion: |
 terms:
   SMP: |
     SMP: Software Management Plan; terms that deserve some context will be explained is these pop-ups.
-help: |
-  Nice, you discovered the help button. 🥳 Questions that benefit from some context will offer a Help ⭐ button that explain the question in more detail or just give some background information  for you to learn from.
-
-  You can go back to the questionnaire now up here. 👆
 buttons:
   - Let's do this!: continue
 ---
@@ -114,7 +112,7 @@ fields:
     hint: Please explain why you will not publish your code
     input type: area
 ---
-mandatory: not multi_user
+mandatory: True
 question: |
   Reuse/Reproduce
 subquestion: |
@@ -125,7 +123,7 @@ subquestion: |
   This question also encompasses whether the software (or suite of scripts/notebooks/data) is intended to be entirely reproducible. This is particularly relevant when the software and its outputs are integral to a peer-reviewed publication. In such instances, we recommend adding a data management plan to describe the underlying input and output data, in collaboration with your local Data Competence Center (DCC) or Publisher.
 
   <details>
-    <summary>Decision Help</summary>
+    <summary><b>Decision Help</b></summary>
     <br>
     <h5>Example projects that would answer “yes” here</h5>
 
@@ -152,7 +150,7 @@ subquestion: |
   With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
 
   <details>
-  <summary>Decision Help</summary>
+  <summary><b>Decision Help</b></summary>
   <br>
   <h5>Example projects that would answer “yes” here</h5>
 
@@ -182,7 +180,7 @@ subquestion: |
   With this question, you answer if you expect a community to form around your software. With community we mean that other people from outside your direct collaborators or contacts are using or working on the software (semi-)autonomously. If so, you will need to plan for the software’s long-term sustainability and identify potential risks to its proper maintenance.
 
   <details>
-  <summary>Decision Help</summary>
+  <summary><b>Decision Help</b></summary>
   <h5>Example projects that would answer “yes” here</h5>
 
   <ul>
@@ -314,7 +312,7 @@ fields:
       - Mercurial
       - SVN
       - Other
-  - Version Scheme Explanation: version_control_explanation
+  - Version Control Explanation: version_control_explanation
     show if:
       variable: version_control
       is: "Other"
@@ -339,56 +337,63 @@ mandatory: public
 question: |
   Licensing and Compatibility
 subquestion: |
-  What type of license will `${ software_name }` have? If you want to choose one yourself, you can use [choosealicense.com](https://choosealicense.com/) or [tldrlegal.com](https://www.tldrlegal.com/) as inspiration. You can find some guidance and common issues explained under "Help" above 👆. Often your employer or department has an opinion on this, so make sure to consult your stakeholders or legal department.
+  What type of license will `${ software_name }` have? If you want to choose one yourself, you can use [choosealicense.com](https://choosealicense.com/) or [tldrlegal.com](https://www.tldrlegal.com/) as inspiration. Often your employer or department has an opinion on this, so make sure to consult your stakeholders or legal department.
 
   If you don't choose an [SPDX license](https://spdx.org/licenses/), please choose "Other" and explain your choice in the "Explanation" field.
 
-help: |
-  > ⚠️
-  > We are not lawyers. This is not legal advice. Please consult your legal department instead.
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <blockquote class="blockquote">
+    <p>⚠️
+    We are not lawyers. This is not legal advice. Please consult your legal department instead.</p>
+    </blockquote>
 
-  ## The Gist
+    <h2>The Gist</h2>
+    <p>The license should be as open as possible, and as closed as necessary. Software licenses must be compatible with the license of external components (dependencies, libraries, etc.) that the software uses. <em>Their</em> terms may dictate how &ldquo;restricted&rdquo; <em>your</em> derived software must be. Your software must be of the same level of &ldquo;openness&rdquo;, or more restrictive. Likewise, if you create a library, choose a license open enough that other people can use it in their code. Otherwise they may be forced to pick a license outside the ecosystem&rsquo;s preference, since <em>their</em> derived software must be of the same level of &ldquo;openness&rdquo; as <em>your</em> software, or more restrictive.</p>
 
-  The license should be as open as possible, and as closed as necessary. Software licenses must be compatible with the license of external components (dependencies, libraries, etc.) that the software uses. _Their_ terms may dictate how "restricted" _your_ derived software must be. Your software must be of the same level of "openness", or more restrictive. Likewise, if you create a library, choose a license open enough that other people can use it in their code. Otherwise they may be forced to pick a license outside the ecosystem's preference, since _their_ derived software must be of the same level of "openness" as _your_ software, or more restrictive.
+    <blockquote class="blockquote">
+    <p>💡
+    It&rsquo;s usually a good idea to choose the domimant license in your ecosystem.</p>
+    </blockquote>
 
-  > 💡
-  > It's usually a good idea to choose the domimant license in your ecosystem.
+    <p>For an indication of how the most popular software licenses relate to each other, have a look at this License Compatibility Chart below 👇. &ldquo;Public Domain&rdquo; is the most open, with no obligations attached. Arrows indicate the direction of tightening restrictions.</p>
 
-  For an indication of how the most popular software licenses relate to each other, have a look at this License Compatibility Chart below 👇. "Public Domain" is the most open, with no obligations attached. Arrows indicate the direction of tightening restrictions.
+    <p><img alt="License Compatibility Chart" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Floss-license-slide-image.svg" width="100%" /><br>
+    <span style="font-size: smaller;"><a data-linknum="4" target="_blank" href="https://commons.wikimedia.org/wiki/File:Floss-license-slide-image.svg">Source</a>, by David A. Wheeler, et al. under <a data-linknum="5" target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0 Deed</a></span></p>
 
-  <img alt="License Compatibility Chart" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Floss-license-slide-image.svg" width="100%" /><br>
-  <span style="font-size: smaller;"><a href="https://commons.wikimedia.org/wiki/File:Floss-license-slide-image.svg">Source</a>, by David A. Wheeler, et al. under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0 Deed</a></span>
+    <h2>When Do License Restrictions Trigger?</h2>
+    <p>In the above paragraph, we have mentioned &ldquo;may&rdquo; a lot. Do license restrictions apply here or not? If you have to adhere to some external code&rsquo;s license terms or not, depends on their license and how &ldquo;integrated&rdquo; it is with your own code.</p>
 
-  ## When Do License Restrictions Trigger?
+    <h3>Maximum Integration</h3>
+    <p>If you publish (part of) someone else&rsquo;s code, then you have to adhere to their license terms. This could be because you copied and pasted their code into your project. Or because you publish a software package or container that packages their libraries.</p>
+    <blockquote class="blockquote">
+    <p>🚨
+    Follow the license terms of the software you use.</p>
+    </blockquote>
 
-  In the above paragraph, we have mentioned "may" a lot. Do license restrictions apply here or not? If you have to adhere to some external code's license terms or not, depends on their license and how "integrated" it is with your own code.
+    <h3>Medium Integration</h3>
+    <p>If you import an external library in your project, it depends on it&rsquo;s license type what you need to follow.</p>
+    <p>More permissive licenses, like MIT or Apache 2.0 consider this degree of separation strong enough and release you from their obligations. You are then free to choose your license.</p>
+    <p>More reciprocal (or &ldquo;copyleft&rdquo;) licenses like the GPL <em>do</em> consider this degree of entanglement close enough to enforce their terms on your software.</p>
+    <blockquote class="blockquote">
+    <p>⚠️
+    If you have to follow the license terms depend on the type of license.</p>
+    </blockquote>
 
-  ### Maximum Integration
-  If you publish (part of) someone else's code, then you have to adhere to their license terms. This could be because you copied and pasted their code into your project. Or because you publish a software package or container that packages their libraries.
+    <h3>No Integration</h3>
+    <p>Even the most restrictive licenses are satisfied if the external software you use has its own process and only indirectly communicates with yours, for example via an ABI (Application Binary Interface).</p>
+    <blockquote class="blockquote">
+    <p>✅
+    You are not bound by other&rsquo;s licensing terms.</p>
+    </blockquote>
 
-  > 🚨
-  > Follow the license terms of the software you use.
+    <h2>Example Pitfalls</h2>
+    <ul>
+    <li>Say you write a Python script and want to publish it under a permissive Apache 2.0 license. However, one of the libraries you use is licensed under the GPL, which is a strongly reciprocal, or &ldquo;copyleft&rdquo;, license. Importing the library is not a strong enough degree of separation, which means you need to follow the GPL license terms. In order to publish your code, you either <em>must</em> publish it instead under the GPL license or a more restrictive one, or you need to use a different external library.</li>
+    <li>You want to package and ship some project code which includes the source code of your libraries. It could be that you package your project as a single executable binary, or something like a docker container. In this case you include and distribute the direct source code of your libraries, which means that you have to check and obey the license terms of all your libraries.</li>
+    </ul>
 
-  ### Medium Integration
-  If you import an external library in your project, it depends on it's license type what you need to follow.
-
-  More permissive licenses, like MIT or Apache 2.0 consider this degree of separation strong enough and release you from their obligations. You are then free to choose your license.
-
-  More reciprocal (or "copyleft") licenses like the GPL _do_ consider this degree of entanglement close enough to enforce their terms on your software.
-
-  > ⚠️
-  > If you have to follow the license terms depend on the type of license.
-
-  ### No Integration
-  Even the most restrictive licenses are satisfied if the external software you use has its own process and only indirectly communicates with yours, for example via an ABI (Application Binary Interface).
-
-  > ✅
-  > You are not bound by other's licensing terms.
-
-
-  ## Example Pitfalls
-  - Say you write a Python script and want to publish it under a permissive Apache 2.0 license. However, one of the libraries you use is licensed under the GPL, which is a strongly reciprocal, or "copyleft", license. Importing the library is not a strong enough degree of separation, which means you need to follow the GPL license terms. In order to publish your code, you either _must_ publish it instead under the GPL license or a more restrictive one, or you need to use a different external library.
-  - You want to package and ship some project code which includes the source code of your libraries. It could be that you package your project as a single executable binary, or something like a docker container. In this case you include and distribute the direct source code of your libraries, which means that you have to check and obey the license terms of all your libraries.
+  </details>
 
 fields:
   - License: software_license
@@ -1199,7 +1204,7 @@ mandatory: True
 question: |
   Software Management Plan
 attachment code: |
-  [user_smp, machine_smp]
+  [user_smp, machine_smp, template_yml]
 ---
 attachment:
   name: Human Readable Software Management Plan for `${ software_name }`
@@ -1210,134 +1215,6 @@ attachment:
     - docx
   description: For your own administration
   variable name: user_smp
-#  content: |
-#    Software Management Plan
-#    ========================
-#
-#    Software Name: `${ software_name }`
-#
-#    Software Management Plan Version: _${ smp_version }_
-#
-#    Authors: ${ authors }
-#
-#    Date: ${ release_date }
-#
-#    ## Purpose
-#    A brief description of `${ software_name }`, stating its purpose and intended user community, if any.
-#
-#    > <i>${ purpose }</i>
-#
-#    ## Version Control
-#    How are different versions of `${ software_name }` managed?
-#
-#    > _${ version_control }_
-#
-#    % if public or reuse:
-#      ## Repository
-#
-#      Is `${ software_name }` intended to be published? If yes, where?
-#
-#      > _${ repository }_
-#    % endif
-#
-#    % if public:
-#      ## Software Licencing and Compatibility
-#      What type of license will `${ software_name }` have?
-#
-#      > _${ software_license }_
-#    % endif
-#
-#    % if public:
-#      ## Citation
-#      How will users of `${ software_name }` be able to cite the software?
-#
-#      > _${ citation }_
-#    % endif
-#
-#    % if public or reuse:
-#      ## User Documentation
-#      How will `${ software_name }` be documented for users?
-#
-#      > _${ user_documentation }_
-#    % endif
-#
-#    % if reuse:
-#      ## User Documentation
-#      How will `${ software_name }` be documented for future developers?
-#
-#      > _${ developer_documentation }_
-#    % endif
-#
-#    % if reuse:
-#      ## Deployment Documentation
-#      How will the installation requirements, deployment- and testing instructions of your software be documented?
-#
-#      > _${ deployment_documentation }_
-#    % endif
-#
-#    % if reuse:
-#      ## Testing
-#      How will your software be tested?
-#
-#      > _${ testing }_
-#    % endif
-#
-#    % if reuse:
-#      ## Quality
-#      How will `${ software_name }`'s quality be ensured? Is there a software quality checklist?
-#
-#      > _${ quality }_
-#    % endif
-#
-#    % if reuse:
-#      ## Packaging
-#      How will `${ software_name }` be packaged and distributed?
-#
-#      > _${ packaging }_
-#    % endif
-#
-#    % if multi_user:
-#      ## Maintenance
-#      How do you plan to procure long term maintenance of `${ software_name }`?
-#
-#      > _${ maintenance }_
-#    % endif
-#
-#    % if community:
-#      ## Sustainability
-#      What measures will be taken to ensure long-term sustainability of `${ software_name }`?
-#
-#      > _${ sustainability }_
-#    % endif
-#
-#    % if community:
-#      ## Support
-#      What level of support will be provided for users of `${ software_name }` and how will this be organized?
-#
-#      > _${ support }_
-#    % endif
-#
-#    % if community:
-#      ## Risk Analysis
-#      What are the main external factors that should be considered by developers and users of `${ software_name }`?
-#
-#      > _${ risk_analysis }_
-#    % endif
-#---
-#attachment:
-#  name: Machine-actionable Software Management Plan for `${ software_name }`
-#  filename: Machine-actionable_SMP_${ space_to_underscore(software_name) }
-#  description: SMP for machines
-#  variable name: machine_smp
-#  valid formats:
-#    - md
-#  content: |
-#    software_name: ${ software_name }
-#    software_management_plan_version: ${ smp_version }
-#    smp_authors: ${ authors }
-#    smp_release_date: ${ release_date }
-#    software_purpose: ${ purpose }
-#    etc.
 ---
 ### Save all user answers in a dictionary
 ### The text will be saved in a variable called `user_vars_string`
@@ -1355,9 +1232,17 @@ code: |
 ---
 attachment:
   name: Machine Readable SMP for `${ software_name }`
-  filename: Machine Readable SMP_${ space_to_underscore(software_name) }
+  filename: Machine_Readable_SMP_${ space_to_underscore(software_name) }
   valid formats:
     - md
   description: For automated analysis
   variable name: machine_smp
   content: ${ user_vars_string }
+---
+attachment:
+  name: Input file for the NLeSC Python Template
+  description: When setting up a new Python project using the [NLeSC Copier Template](https://github.com/NLeSC/python-template), this file can be passed using `--data-file=copier_template_answers.yml` to already fill in some questions.
+  filename: copier_template_answers
+  variable name: template_yml
+  raw: True
+  content file: answers.yml
