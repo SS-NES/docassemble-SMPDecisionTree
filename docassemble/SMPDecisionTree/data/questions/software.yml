@@ -172,7 +172,7 @@ subquestion: |
 yesno: multi_user
 
 ---
-mandatory: reuse and multi_user
+mandatory: multi_user
 question: |
   Community
 subquestion: |
@@ -1052,13 +1052,13 @@ fields:
 
       Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
     show if:
-      code: reuse or multi_user
+      code: reuse
   - no label: developer_documentation
     hint: The developer documentation is part of the repository. It is a file called `README.dev.md`.
     input type: area
     rows: 10
     show if:
-      code: reuse or multi_user
+      code: reuse
   - note: |
       **Deployment Documentation**
 
