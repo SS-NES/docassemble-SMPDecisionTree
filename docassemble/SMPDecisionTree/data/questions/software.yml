@@ -21,7 +21,7 @@ features:
 ---
 mandatory: True
 code: |
-  smp_decision_tree_version = "0.1.0"
+  smp_decision_tree_version = "0.0.4"
   community = False
   reuse = False
   multi_user = False
@@ -60,7 +60,7 @@ terms:
 buttons:
   - Let's do this!: continue
 post: |
-  <span style="float: right; opacity: 0.7;">SMP Decision Tree <code>v.${ smp_decision_tree_version }</code></span>
+  <span style="float: right; opacity: 0.7;">SMP Decision Tree <code>v${ smp_decision_tree_version }</code></span>
 ---
 mandatory: True
 question: |

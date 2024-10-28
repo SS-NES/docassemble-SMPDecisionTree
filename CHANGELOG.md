@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Group questions into logical blocks.
 
-## [0.1.0] - 2024-10-28
+## [0.0.4] - 2024-10-28
 
 - Initial release
 
@@ -20,5 +20,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add SMP Decision Tree version tag to start page
 - Add CHANGELOG.md file
 
-[unreleased]: https://github.com/SS-NES/docassemble-SMPDecisionTree/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.1
+[unreleased]: https://github.com/SS-NES/docassemble-SMPDecisionTree/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.4
