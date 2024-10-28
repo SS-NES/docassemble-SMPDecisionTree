@@ -1,0 +1,51 @@
+% if public:
+SelectCitation:
+- AddCitationFile_flag
+% endif
+% if reuse:
+SelectCodeQualityFeatures:
+- AddLocalTests_flag
+- AddLinting_flag
+- AddPreCommit_flag
+% endif
+% if community:
+SelectCommunityFeatures:
+- AddCodeConduct_flag
+- AddContributing_flag
+% endif
+% if reuse:
+SelectDocumentationFeatures:
+- AddDevDoc_flag
+% endif
+% if public:
+SelectPublishReleaseFeatures:
+- SelectCitation_flag
+- AddChangeLog_flag
+% endif
+code_of_conduct_email: ${ authors.elements[0].address }
+copyright_holder: ${ ownership }
+email: ${ authors.elements[0].address }
+full_name: ${ authors.elements[0].name }
+% if public:
+% if software_license == 'Apache-2.0 (Apache License 2.0)':
+license: Apachev2
+% endif
+% if software_license == 'MIT (MIT License)':
+license: MIT
+% endif
+% if software_license == 'BSD-3-Clause (BSD 3-Clause "New" or "Revised" License)':
+license: BSD
+% endif
+% if software_license == 'ISC (ISC License)':
+license: ISC
+% endif
+% if software_license == 'GPL-3.0-or-later (GNU General Public License v3.0 or later)':
+license: GNUv3
+% endif
+% if software_license == 'LGPL-3.0-or-later (GNU Lesser General Public License v3.0 or later)':
+license: GNULesserv3
+% endif
+% endif
+package_name: ${ software_name }
+package_short_description: ${ purpose }
+template_profile: ask
