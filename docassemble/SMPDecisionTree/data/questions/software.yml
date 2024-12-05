@@ -1033,45 +1033,8 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: public or reuse
-question: |
-  Documentation
-
-fields:
-  - note: |
-      **User Documentation**
-
-      How will `${ software_name }` be documented for users?
-
-      Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
-  - no label: user_documentation
-    hint: The documentation is part of the repository and will be generated with each release. An automated process publishes each version at https://sky-scanner.readthedocs.com
-    input type: area
-    rows: 10
-  - note: |
-      **Developer Documentation**
-
-      How will `${ software_name }` be documented for future developers?
-
-      Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
-    show if:
-      code: reuse
-  - no label: developer_documentation
-    hint: The developer documentation is part of the repository. It is a file called `README.dev.md`.
-    input type: area
-    rows: 10
-    show if:
-      code: reuse
-  - note: |
-      **Deployment Documentation**
-
-      How will the installation requirements, deployment- and testing instructions of `${ software_name }` be documented?
-
-      Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
-  - no label: deployment_documentation
-    hint: The deployment documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
-    input type: area
-    rows: 10
+include:
+  - documentation.yml
 ---
 include:
   - testing-best-practices.yml
