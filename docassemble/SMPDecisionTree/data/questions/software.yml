@@ -62,27 +62,8 @@ buttons:
 post: |
   <span style="float: right; opacity: 0.7;">SMP Decision Tree <code>v${ smp_decision_tree_version }</code></span>
 ---
-mandatory: True
-question: |
-  Software
-fields:
-  - note: |
-      What is the name of your software or framework?
-    Name: software_name
-    hint: my_software
-  - note: |
-      Please provide a brief description of `${ software_name }`, stating its purpose and intended user community, if any.
-
-      Clearly state the purpose of the software. Provide general information such as: what problem does it solve, who is the intended audience, what are its advantages and limitations, etc. A clear explanation of the purpose of the software helps the developer focus on its specific needs.
-
-      Some aspects to be considered:
-
-      - What is the purpose of the software?
-      - What is the software’s intended user community?
-      - Why are you developing this and not reusing existing software?
-    hint: This BASH script proves the Hauptvermutung conjecture and generates some visual examples. It is intended to be used by the general math community. We are developing this software because no prior software like this exists since no one else proved the Hauptvermutung.
-    input type: area
-    rows: 10
+include:
+  - name_purpose.yml
 ---
 ### Start switch questions
 mandatory: True
