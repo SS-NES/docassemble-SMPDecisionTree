@@ -1177,7 +1177,7 @@ mandatory: True
 question: |
   Risk Analysis
 subquestion: |
-  Consider other factors that could have an impact on `${ software_name }`, or could be caused by `${ software_name }`your software. For example compliance with privacy policies, security considerations, reliability requirements, portability / vendor lock-in, etc.
+  Consider other factors that could have an impact on `${ software_name }`, or could be caused by `${ software_name }` your software. For example compliance with privacy policies, security considerations, reliability requirements, portability / vendor lock-in, etc.
 
   Describe the main external factors that should be considered by developers and users of the Software. These could include data privacy, information security, etc.
 
