@@ -1,0 +1,51 @@
+---
+mandatory: True
+question: |
+  Version Control
+subquestion: |
+  How will you manage versioning of `${ software_name }`? Which version control system will you use to manage your source code? What {versioning scheme} will you apply?
+
+  Adequate versioning of research software facilitates management of research software, allowing for the identification of specific versions of the software.
+
+terms:
+  versioning scheme: |
+     Typical versioning schemes are [semver](https://semver.org/) or [calver](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
+
+fields:
+  - Version Scheme: version_scheme
+    choices:
+      - Semantic Versioning
+      - Calendar Versioning
+      - Other
+  - Version Scheme Explanation: version_scheme_explanation
+    show if:
+      variable: version_scheme
+      is: "Other"
+    hint: Please explain which other version scheme you will use, or why you will not use any.
+    input type: area
+  - Version Control: version_control
+    choices:
+      - Git
+      - Mercurial
+      - SVN
+      - Other
+  - Version Control Explanation: version_control_explanation
+    show if:
+      variable: version_control
+      is: "Other"
+    hint: Please explain which other version control system you will use, or why you will not use any.
+    input type: area
+  - note: |
+      ### Repository
+      Where do you plan to make `${ software_name }` publicly available? The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com).
+
+      Please provide links to the software if this is already the case.
+    show if:
+      code: public or reuse
+  - no label: repository
+    hint: The software will be available at https://uni_gotham.gitlab.com/RowHammer
+    input type: area
+    rows: 10
+    show if:
+      code: public or reuse
+---
