@@ -2,32 +2,26 @@
 mandatory: reuse
 question: |
   Testing
-subquestion: |
-  How will your software be tested? Please provide a link to automated testing results, if available.
-
-  Incorporate tests to ensure your software continues to work as intended. Different types of testing (unit, functional, integration, linting, typing, regression, etc.) could be used. Tests in turn should also be documented. Coverage tools should also be used to assess the extent of the tested code.
-
 fields:
-  - Testing: testing
+  - note: |
+      How will your software be tested? Please provide a link to automated testing results, if available.
+
+      Incorporate tests to ensure your software continues to work as intended. Different types of testing (unit, functional, integration, linting, typing, regression, etc.) could be used. Tests in turn should also be documented. Coverage tools should also be used to assess the extent of the tested code.
+  - no label: testing
     #default: manual testing
     hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
     input type: area
     rows: 10
----
-mandatory: reuse
-question: |
-  Quality
-subquestion: |
-  Make sure your software adheres to relevant code quality standards (styling, modularity, etc.) and uses tools for collaborative development to measure code quality. Do you use a {software quality checklist}? If yes, which one?
+  - note: |
+      ### Code Quality Best Practices
 
-terms:
-  software quality checklist: |
-    A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
-
-fields:
-  - Quality: quality
+      Make sure your software adheres to relevant code quality standards (styling, modularity, etc.) and uses tools for collaborative development to measure code quality. Do you use a {software quality checklist}? If yes, which one?
+  - no label: quality
     #default: I only write perfect code.
     hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
     input type: area
     rows: 10
+terms:
+  software quality checklist: |
+    A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
 ---
