@@ -17,7 +17,7 @@ fields:
 
       What coding best practices do you plan to follow in your code?
 
-      It is important to make sure your software adheres to relevant code quality standards (styling, modularity, etc.). You should also use tools for collaborative development to measure code quality. For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality).
+      It is important to make sure your software adheres to relevant code quality standards (styling, modularity, etc.). You should also use tools for collaborative development to measure code quality. For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality) and its following pages.
       
       If you are using a {software quality checklist}, please point out which one.
   - no label: quality
