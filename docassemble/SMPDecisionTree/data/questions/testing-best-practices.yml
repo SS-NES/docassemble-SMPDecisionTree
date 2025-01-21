@@ -14,8 +14,12 @@ fields:
     rows: 10
   - note: |
       ### Code Quality Best Practices
-# Changes need to happen here.
-      Make sure your software adheres to relevant code quality standards (styling, modularity, etc.) and uses tools for collaborative development to measure code quality. Do you use a {software quality checklist}? If yes, which one?
+
+      What coding best practices do you plan to follow in your code?
+
+      It is important to make sure your software adheres to relevant code quality standards (styling, modularity, etc.). You should also use tools for collaborative development to measure code quality. 
+      
+      If you are using a {software quality checklist}, please point out which one.
   - no label: quality
     #default: I only write perfect code.
     hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
