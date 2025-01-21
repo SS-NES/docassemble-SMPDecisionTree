@@ -944,7 +944,9 @@ question: |
   Citation
 subquestion: |
 # This needs to change
-  How will users of `${ software_name }` be able to cite your software? Please provide a link to your software citation file {CFF} and/or Digital Object Identifier {DOI} if available.
+  How will users of `${ software_name }` be able to cite your software? 
+  
+  If available, please provide a link to your software citation file {CFF} and/or Digital Object Identifier {DOI} linked to your software. If you are publishing your software together with a dataset, please at least provide the DOI attached to the dataset. Can your software be cited in the same way the dataset can be cited? If not, please make sure to provide a way to cite your software also in the location where the dataset is published. 
 terms:
   CFF: |
     `CITATION.cff` files are plain text files with human- and machine-readable citation information for software (and datasets). Code developers can include them in their repositories to let others know how to correctly cite their software. [Details](https://citation-file-format.github.io/)
