@@ -1,0 +1,32 @@
+# YAML 1.2
+---
+authors:
+  - given-names: Sander
+    name-particle: van
+    family-names: Rijn
+    email: s.vanrijn@esciencecenter.nl
+    affiliation: Netherlands eScience Center
+    orcid: 'https://orcid.org/0000-0001-6159-041X'
+  - given-names: Bjoern Ole
+    family-names: Mussmann
+    email: o.mussmann@esciencecenter.nl
+    affiliation: Netherlands eScience Center
+    orcid: 'https://orcid.org/0000-0002-3803-4287'
+  - given-names: Thijs
+    name-particle: van
+    family-names: Lankveld
+    email: t.vanlankveld@esciencecenter.nl
+    affiliation: Netherlands eScience Center
+    orcid: 'https://orcid.org/0009-0001-1147-4813'
+cff-version: "1.2.0"
+#date-released: 2025-00-00
+#doi: 10.5281/zenodo.1310751
+keywords:
+  - software management plan
+  - SMP
+  - docassemble
+license: Apache-2.0
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/SS-NES/docassemble-SMPDecisionTree"
+title: "SMP Decision Tree"
+version: "0.0.4"
