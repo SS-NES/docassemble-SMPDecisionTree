@@ -1,0 +1,4 @@
+build/
+container/
+*.egg-info/
+docassemble/SMPDecisionTree/data/questions/test.yml
