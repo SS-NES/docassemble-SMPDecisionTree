@@ -2,6 +2,10 @@
 mandatory: public or reuse
 question: |
   Documentation
+subquestion: |
+  When software is shared or reused, documentation is essential for others and yourself in the future to understand what it does and how it works.
+
+  The [Turing Way](https://book.the-turing-way.org/reproducible-research/code-documentation) lists some useful references with information on software documentation.
 
 fields:
   - note: |
@@ -9,7 +13,10 @@ fields:
 
       How will `${ software_name }` be documented for users?
 
-      Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
+      </details>
   - no label: user_documentation
     hint: The documentation is part of the repository and will be generated with each release. An automated process publishes each version at https://sky-scanner.readthedocs.com
     input type: area
@@ -19,7 +26,10 @@ fields:
 
       How will `${ software_name }` be documented for future developers?
 
+      <details>
+        <summary><b>Decision Help</b></summary>
       Please explain how the software can be modified (docstrings, in-line comments, etc.), tested, and contributed to (governance, code of conduct, contributing guidelines, etc.).
+      </details>
     show if:
       code: reuse
   - no label: developer_documentation
@@ -33,9 +43,13 @@ fields:
 
       How will the installation requirements, deployment- and testing instructions of `${ software_name }` be documented?
 
+      <details>
+        <summary><b>Decision Help</b></summary>
       Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
+      </details>
   - no label: deployment_documentation
     hint: The deployment documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
     input type: area
     rows: 10
 ---
+
