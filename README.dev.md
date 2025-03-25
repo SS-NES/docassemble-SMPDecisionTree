@@ -67,7 +67,7 @@ After a few minutes, docassemble should be running at http://localhost:80 (or "l
 When accessing the hosted site for the first time, log in using the default admin@admin.com account with its default "password".
 This prompts you to change the password to something less pre-breached.
 
-We recommend you immediately add another admin user with a functional email:
+We recommend you immediately add another admin user with a functioning email:
 `account (top right) -> User List -> Menu -> Add a user`.
 
 ### Docker primer
