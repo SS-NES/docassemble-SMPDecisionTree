@@ -28,10 +28,6 @@ case "${flag}" in
 esac
 done; shift $(($OPTIND - 1));
 
-# Process positional arguments.
-# scriptdir=$(dirname $0)
-# a=$1
-
 if [ -z "${container}" ]; then
     container=$(docker ps -q | head -n1 | sed -e 's/\s.*$//')
 fi
