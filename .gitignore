@@ -1,4 +1,5 @@
 build/
 container/
 *.egg-info/
+.vscode/
 docassemble/SMPDecisionTree/data/questions/test.yml
