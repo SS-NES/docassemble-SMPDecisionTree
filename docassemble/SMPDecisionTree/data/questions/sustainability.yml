@@ -1,0 +1,84 @@
+---
+mandatory: multi_user
+question: |
+  Maintenance
+subquestion: |
+  Make sure there are arrangements in place for the maintenance and reuse of `${ software_name }`. Whenever suitable, develop a retirement strategy for your software. Is there an organization or company that can take over the development?
+
+  How do you plan to procure long term maintenance of your software?
+
+fields:
+  - Maintenance: maintenance
+    #default: No maintenance, my software is perfect.
+    hint: The LogoFAIL project runs for four years after which either Microsoft will take it over or the software will be retired. In any case, the vulnerability will surely be patched by then.
+    input type: area
+    rows: 10
+---
+mandatory: community
+question: |
+  Sustainability
+subquestion: |
+  What measures will be taken during the project to ensure the long-term sustainability of `${ software_name }`? (less than 300 words)
+
+  Some examples include:
+
+  - A researcher or RSE from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.
+  - A community will co-develop the software and help maintain it afterwards.
+  - Organizing workshops and hands-on user training to create or extend a community around the software.
+  - The software will be developed as part of an overarching software suite used in other (research) projects.
+  - A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.
+  - Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media.
+  - Do you have the resources to procure storage and computer infrastructure required for maintaining the software.
+
+fields:
+  - Sustainability: sustainability
+    #default: It's so good, it will live forever.
+    hint: During the project we will build a community around Shellshock. After a second round of funding, a non-profit will be set up to govern the project for the next 20 years.
+    input type: area
+    rows: 10
+---
+mandatory: community
+question: |
+  Support
+subquestion: |
+  Plan resources for support-related activities such as training, hiring research software engineers, infrastructure, hardware, etc, and regarding the level of service provided by `${ software_name }`. Do you plan to continue support after active development of the software?
+
+  What level of support will be provided for your users and how will this support be organised?
+
+fields:
+  - Support: support
+    #default: Personal support for my friends.
+    hint: DeadBolt will have a self-hosted helpdesk ticket system (osTicket) and a telephone hotline for our ransomware victims. We intend to answer requests within 24 hours.
+    input type: area
+    rows: 10
+---
+mandatory: reuse
+question: |
+  Testing
+fields:
+  - note: |
+      How will your software be tested? Please provide a link to automated testing results, if available.
+
+      Incorporate tests to ensure your software continues to work as intended. Different types of testing (unit, functional, integration, linting, typing, regression, etc.) could be used. Tests in turn should also be documented. Coverage tools should also be used to assess the extent of the tested code.
+  - no label: testing
+    #default: manual testing
+    hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
+    input type: area
+    rows: 10
+  - note: |
+      ### Code Quality Best Practices
+
+      What coding best practices do you plan to follow in your code?
+
+      It is important to make sure your software adheres to relevant code quality standards (styling, modularity, etc.). You should also use tools for collaborative development to measure code quality. For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality) and its following pages.
+
+      If you are using a {software quality checklist}, please point out which one.
+  - no label: quality
+    #default: I only write perfect code.
+    hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
+    input type: area
+    rows: 10
+terms:
+  software quality checklist: |
+    A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
+---

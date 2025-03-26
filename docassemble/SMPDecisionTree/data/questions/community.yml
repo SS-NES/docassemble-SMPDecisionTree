@@ -1,0 +1,54 @@
+---
+mandatory: reuse
+question: |
+  Users, Developers, Creators
+subquestion: |
+  Do you expect/foresee `${ software_name }` being used by others, or integrated or modified by other developers, now or in the future?
+
+  With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
+
+  <details>
+  <summary><b>Decision Help</b></summary>
+  <br>
+  <h5>Example projects that would answer “yes” here</h5>
+
+  <ul>
+    <li>A software package that you co-develop with collaborators and plan to make available to your research field.</li>
+    <li>Tools for extracting, transforming and visualizing visuals of architectural design from PDF files: <a href="https://visarchpy.readthedocs.io">VisArchPy</a></li>
+    <li>A web application that researchers use to create questionnaires to collect data from citizens involved in participatory urban planning.</li>
+   </ul>
+
+  <h5>Example projects that would answer “no” here</h5>
+
+  <ul>
+    <li>Single-use script for a power-line data analysis for one paper.</li>
+    <li>A custom BASH application for organizing and backing up millions of files containing results of a weather model running in an in-house computer cluster.</li>
+  </ul>
+  </details>
+  <br>
+
+yesno: multi_user
+---
+mandatory: multi_user
+question: |
+  Community
+subquestion: |
+  Does `${ software_name }` have, or do you plan to build a community around it?
+  With this question, you answer if you expect a community to form around your software. With community we mean that other people from outside your direct collaborators or contacts are using or working on the software (semi-)autonomously. If so, you will need to plan for the software’s long-term sustainability and identify potential risks to its proper maintenance.
+
+  <details>
+  <summary><b>Decision Help</b></summary>
+  <h5>Example projects that would answer “yes” here</h5>
+
+  <ul>
+    <li>A jupyter notebook extension that enables researchers across disciplines to prepare, upload and download datasets from Zenodo, and other research data repositories: <a href="https://fairly.readthedocs.io">fairly.readthedocs.io</a></li>
+  </ul>
+  <h5>Example projects that would answer “no” here</h5>
+  <ul>
+    <li>A software package that you co-develop with collaborators and plan to make available to your research field, but that does not call for further expansion.</li>
+    </ul>
+  </details>
+  <br>
+
+yesno: community
+---

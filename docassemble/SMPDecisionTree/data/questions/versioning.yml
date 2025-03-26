@@ -1,4 +1,24 @@
 ---
+mandatory: False
+question: |
+  Software Management Plan Version
+subquestion: |
+  What is the version of this Software Management Plan? [Semantic versioning](https://semver.org) is recommended to indicate the severity of changes.
+
+  Examples: `0.0.1` or `7.5.3`
+
+  Schema: `MAJOR`.`MINOR`.`PATCH`
+
+  - `MAJOR` Large changes
+  - `MINOR` Content additions
+  - `PATCH` Minor changes, typos
+
+  Note: A leading zero indicates a pre-release version.
+
+fields:
+  - Version: smp_version
+    default: 0.1.0
+---
 mandatory: True
 question: |
   Version Control

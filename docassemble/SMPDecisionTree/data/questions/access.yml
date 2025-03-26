@@ -1,0 +1,21 @@
+---
+mandatory: True
+question: |
+  Public
+subquestion: |
+  Do you plan to make `${ software_name }` publicly available?
+
+  With this question, you answer if you plan on making your software available on a searchable and accessible platform where others can find it. If so, you will have to also think about what conditions to make `${ software_name }` available under, e.g. its license.
+
+  If you do not plan to make it publicly available, please provide your reasons.
+
+fields:
+  - "We will make `${ software_name }` publicly available": public
+    datatype: yesnoradio
+  - Explanation: public_explanation
+    show if:
+      variable: public
+      is: False
+    hint: Please explain why you will not publish your code
+    input type: area
+---
