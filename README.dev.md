@@ -153,8 +153,9 @@ If you have deployed docassemble locally, you can use the scripts `pull_playgrou
 `push_playground.sh` pushes the interview files from this repository to a locally running docker container.
 
 Both scripts accept these optional input arguments:
-* `-c [container ID]` (default: first running docker container)
 * `-a [docassemble account number]` (default: 1, which is usually admin@admin.com)
+* `-c [container ID]` (default: first running docker container)
+* `-k` (default: remove temporary directory)
 * `-t [temporary directory]` (default: ./container)
 
 Note that these scripts cannot match docassemble account numbers to specific accounts.
@@ -162,6 +163,9 @@ If you are unsure which number your account has, you can call `pull_playground.s
 Each account stores its files in numbered subdirectories in this directory structure; the number is the account number.
 
 While this process may become cumbersome when the docassemble site has a lot of accounts, this shouldn't become a problem if it is hosted locally.
+
+Note that the temporary directory is only used because the docker container and repository use a different directory structure to organize the interview files.
+Any actual content of this directory is equivalent to the content in the repository.
 
 
 ## Deploy interview
@@ -180,6 +184,7 @@ On your docassemble server, `account -> Configuration`.
 `Save`
 
 After restarting the docassemble system, the root URL should point to the SMP Decision Tree interview.
+
 
 ## How to contribute
 
