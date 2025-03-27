@@ -18,19 +18,33 @@
 container=""
 account=1
 tmp="container"
+rm_tmp=1
 
 # Process flags.
-while getopts c:a:t: flag; do
+while getopts a:c:kt: flag; do
 case "${flag}" in
-    c) container=${OPTARG};;
     a) if [[ ${OPTARG} =~ ^[1-9][0-9]*$ ]]; then account=${OPTARG}; fi;; # Positive integers only.
-    t) tmp=${OPTARG};;
+    c) container=${OPTARG};;
+    k) rm_tmp=0;;
+    t) tmp=${OPTARG}; rm_tmp=0;;
 esac
 done; shift $(($OPTIND - 1));
 
 if [ -z "${container}" ]; then
     container=$(docker ps -q | head -n1 | sed -e 's/\s.*$//')
 fi
+
+# Copy the contents of one directory into another,
+# possibly creating the destination and its parent directories.
+# Also prints the directory copied.
+cpd () {
+    if [ -d $1 ] && ! [ -z "$(ls -A $1)" ]; then
+        echo "    '$1/*' to '$2'"
+        if ! [ -d $2 ]; then mkdir -p $2; fi
+        cp $1/* $2
+    fi
+}
+
 
 echo "Copying playgrounds from container ${container} to '${tmp}'..."
 if ! [ -d "${tmp}" ]; then
@@ -39,18 +53,18 @@ fi
 docker cp "${container}:/usr/share/docassemble/files/" "${tmp}"
 echo "Accounts listed: $(ls ${tmp}/files/playground/)"
 
+
 echo "Copying playground data from account ${account}..."
-cpd () {
-    if [ -d $1 ] && ! [ -z "$(ls -A $1)" ]; then
-        echo "    '$1/*' to '$2'"
-        if ! [ -d $2 ]; then mkdir -p $2; fi
-        cp $1/* $2
-    fi
-}
 data="docassemble/SMPDecisionTree/data"
 cpd "${tmp}/files/playground/${account}"          "${data}/questions/"
 cpd "${tmp}/files/playgroundsources/${account}"   "${data}/sources/"
 cpd "${tmp}/files/playgroundstatic/${account}"    "${data}/static/"
 cpd "${tmp}/files/playgroundtemplate/${account}"  "${data}/templates/"
+
+
+if [ ${rm_tmp} == 1 ]; then
+    echo "Removing temporary directory."
+    rm -rf "${tmp}/"
+fi
 
 echo "DONE"
