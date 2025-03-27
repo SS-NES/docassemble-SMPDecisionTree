@@ -79,7 +79,6 @@ include:
   - versioning.yml
   - license.yml
   - documentation.yml
-  - packaging.yml
   - sustainability.yml
   - risks.yml
   - dmp.yml

@@ -1,4 +1,17 @@
 ---
+question: |
+  Authors
+subquestion: |
+  Who is the ${ ordinal(i) } author of this Software Management Plan?
+fields:
+  - Name: authors[i].name
+    #default: Alice Munroe
+    hint: Jane Doe
+  - E-mail: authors[i].address
+    #default: alice@example.com
+    hint: jane_doe@example.com
+    datatype: email
+---
 mandatory: True
 question: |
   Review Authors
@@ -15,19 +28,6 @@ subquestion: |
   ${ authors.table }
   ${ authors.add_action() }
 continue button field: authors_ok
----
-question: |
-  Authors
-subquestion: |
-  Who is the ${ ordinal(i) } author of this Software Management Plan?
-fields:
-  - Name: authors[i].name
-    #default: Alice Munroe
-    hint: Jane Doe
-  - E-mail: authors[i].address
-    #default: alice@example.com
-    hint: jane_doe@example.com
-    datatype: email
 ---
 mandatory: True
 question: |

@@ -82,3 +82,18 @@ terms:
   software quality checklist: |
     A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
 ---
+mandatory: reuse
+question: |
+  Packaging
+subquestion: |
+  How will `${ software_name }` be packaged and distributed? Please provide a link to available packaging information (e.g. entry in a packaging registry, if available).
+
+  Use appropriate package managers to allow users to install/deploy your software with ease. Examples include PyPI, CRAN, NPM, Maven, Crates, conda, etc.
+
+fields:
+  - Packaging: packaging
+    #default: I will package it in a cardboard box.
+    hint: "XZ Utils will be packaged on Pypi (link: ...) and conda (link: ...)"
+    input type: area
+    rows: 10
+---
