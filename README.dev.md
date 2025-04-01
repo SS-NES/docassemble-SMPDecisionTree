@@ -155,7 +155,7 @@ If you have deployed docassemble locally, you can use the scripts `pull_playgrou
 Both scripts accept these optional input arguments:
 * `-a [docassemble account number]` (default: 1, which is usually admin@admin.com)
 * `-c [container ID]` (default: first running docker container)
-* `-k` (default: remove temporary directory)
+* `-k` (keep temporary directory; default: remove)
 * `-t [temporary directory]` (default: ./container)
 
 Note that these scripts cannot match docassemble account numbers to specific accounts.
