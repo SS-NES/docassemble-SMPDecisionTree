@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `bump-my-version` support for version releases
+
 ### Changed
 
 ### Removed
