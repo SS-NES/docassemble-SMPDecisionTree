@@ -1,0 +1,77 @@
+---
+question: |
+  Authors
+subquestion: |
+  Who is the ${ ordinal(i) } author of this Software Management Plan?
+fields:
+  - Name: authors[i].name
+    #default: Alice Munroe
+    hint: Jane Doe
+  - E-mail: authors[i].address
+    #default: alice@example.com
+    hint: jane_doe@example.com
+    datatype: email
+---
+mandatory: True
+question: |
+  Review Authors
+subquestion: |
+  There
+  %if authors.number()==1:
+  is
+  %else:
+  are
+  %endif
+  ${ authors.number_as_word() } ${ authors.as_noun() }. Feel free to add more or arrange their order.
+
+  Note: The first person will be used as primary contact.
+  ${ authors.table }
+  ${ authors.add_action() }
+continue button field: authors_ok
+---
+mandatory: True
+question: |
+  Ownership
+subquestion: |
+  Who has the Intellectual Property (IP) of `${ software_name }`? You? Your university or department?
+
+  Open-source software still is the intellectual property of someone, even if other people are permitted to use it according to the license terms.
+fields:
+  - Ownership: ownership
+    #default: |
+    #  long description
+    #  multiple lines
+    hint: University of Springfield, Department of Nuclear Physics
+    input type: area
+---
+mandatory: True
+question: |
+  Research Project Context
+subquestion: |
+  Is there a research project associated with `${ software_name }`? Is it part of a call or consortium? Please provide the context which the software is embedded in.
+fields:
+  - Research Project Context: research_project_context
+    #default: |
+    #  long description
+    #  multiple lines
+    hint: This software is used in the MultiRay (see https://multiray.example.com) project, which is part of the CaptureTheSky call (see https://CTS.example.com).
+    input type: area
+    rows: 10
+---
+mandatory: public
+question: |
+  Citation
+subquestion: |
+  How will users of `${ software_name }` be able to cite your software? Please provide a link to your software citation file {CFF} and/or Digital Object Identifier {DOI} if available.
+terms:
+  CFF: |
+    `CITATION.cff` files are plain text files with human- and machine-readable citation information for software (and datasets). Code developers can include them in their repositories to let others know how to correctly cite their software. [Details](https://citation-file-format.github.io/)
+  DOI: |
+    Designed to be used by humans as well as machines, DOIs identify objects persistently. They allow things to be uniquely identified and accessed reliably. [Details](https://www.doi.org/the-identifier/what-is-a-doi/)
+fields:
+  - Citation: citation
+    #default: cite me!
+    hint: "CFF file in the repository (link: ...), DOI on Zenodo (link: ...)"
+    input type: area
+    rows: 10
+---
