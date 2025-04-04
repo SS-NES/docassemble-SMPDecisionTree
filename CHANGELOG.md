@@ -26,7 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.5] - yyyy-mm-dd
 
-- Improved contribution guides
+- Improved contribution guides.
+- Split questions into separate yml files by concept.
 
 ### Added
 
