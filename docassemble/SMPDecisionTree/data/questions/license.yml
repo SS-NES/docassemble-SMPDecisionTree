@@ -19,6 +19,8 @@ subquestion: |
 
     <h4>Why is a License Important?</h4>
     <p>The software's license protects its usage and ownership. Proprietary licenses often protect commercial interests (e.g. limit code reuse), while open source licenses often protect its attribution (e.g. any reuse must cite its original owner and creators).</p>
+
+    <p>Perhaps more importantly, software without a license falls under exclusive copyright by default. This means that nobody else can copy, distribute, modify, or use your work. If the work has other contributors, &ldquo;nobody&rdquo; starts including you.</p>
   
 
     <h4>How to Choose a License?</h4>
