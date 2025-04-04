@@ -24,7 +24,7 @@ subquestion: |
   
 
     <h4>How to Choose a License?</h4>
-    <p>The license is usually chosen by the software owner. If you are in a position to choose the license yourself, you can use <a href="https://choosealicense.com/">choosealicense.com</a> or <a href="https://www.tldrlegal.com/">tldrlegal.com</a> as inspiration.</p>
+    <p>The license is usually chosen by the software owner. If you are in a position to choose the license yourself, you can use <a href="https://choosealicense.com/">choosealicense.com</a> or <a href="https://www.tldrlegal.com/">tldrlegal.com</a> as inspiration. The <a href="https://book.the-turing-way.org/reproducible-research/licensing/">Turing Way</a> gives some more useful information on software licensing.</p>
 
     <p>The license should be as open as possible and as closed as necessary.</p>
     <p>Software licenses must be compatible with the license of all external components that the software uses (dependencies, libraries, etc.). <em>Their</em> terms may dictate how &ldquo;restricted&rdquo; <em>your</em> derived software must be. Your software must be of the same level of &ldquo;openness&rdquo;, or more restrictive.</p>
