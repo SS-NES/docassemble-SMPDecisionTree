@@ -59,7 +59,14 @@ fields:
   - note: |
       How will your software be tested? Please provide a link to automated testing results, if available.
 
-      Incorporate tests to ensure your software continues to work as intended. Different types of testing (unit, functional, integration, linting, typing, regression, etc.) could be used. Tests in turn should also be documented. Coverage tools should also be used to assess the extent of the tested code.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>{Testing code} thoroughly and frequently is vital to ensure reliable, reproducible research. {Automating your tests} means you will never forget to check for known points of failure.</p>
+
+        <p>Different types of testing ({unit}, {integration}, {acceptance}, {regression}, etc.) could be used. {Code coverage} tools should also be used to assess the extent of the code tested.</p>
+
+        <p>The <a href="https://book.the-turing-way.org/reproducible-research/testing">Turing Way</a> provides more motivation for why testing is critical. It also explains the testing concepts stated above.</p>
+      </details>
   - no label: testing
     #default: manual testing
     hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
@@ -70,15 +77,32 @@ fields:
 
       What coding best practices do you plan to follow in your code?
 
-      It is important to make sure your software adheres to relevant code quality standards (styling, modularity, etc.). You should also use tools for collaborative development to measure code quality. For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality) and its following pages.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>It is important to make sure your software adheres to relevant code quality standards (code style, modularity, etc.). You should also use tools for collaborative development to measure code quality (e.g. linting tools). For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality) and its following pages.</p>
 
-      If you are using a {software quality checklist}, please point out which one.
+        <p>If you are using a {software quality checklist}, please point out which one.</p>
+      </details>
   - no label: quality
     #default: I only write perfect code.
     hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
     input type: area
     rows: 10
 terms:
+  testing code: |
+    You probably already did a lot of tests while making sure your code works as intended. Keeping these tests around and structurally executing them makes your code more reliable and trustworthy.
+  automating your tests: |
+    Either running tests at fixed intervals (e.g. nightly [Jenkins](https://www.jenkins.io/) runs), or whenever changes are committed (e.g. through [continuous integration](https://book.the-turing-way.org/reproducible-research/ci)).
+  unit: |
+    A level of software testing where small units of software are tested individually.
+  integration: |
+    A level of software testing where units of software are combined and tested as a group.
+  acceptance: |
+    A level of software testing where a system is tested for compliance with project requirements.
+  regression: |
+    A style of software testing where the results of tests after changes are compared to the results before.
+  code coverage: |
+    A measure of how much of the source code is executed by the test suite.
   software quality checklist: |
     A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
 ---
