@@ -1,7 +1,7 @@
 ---
 mandatory: True
 question: |
-  Public
+  Software Access
 subquestion: |
   Do you plan to make `${ software_name }` publicly available?
 
