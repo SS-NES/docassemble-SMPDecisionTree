@@ -3,9 +3,13 @@ mandatory: True
 question: |
   Hi!
 subquestion: |
-  Welcome to the Software Management Plan ({SMP}) Decision Tree! In this tool, we will ask your some questions about your research software. Based on your answers, we will suggest which best practices are most relevant for you to consider. For each best practice this tool will provide some relevant resources and examples on how to implement them.
+  Welcome to the Software Management Plan ({SMP}) Decision Tree!
+  
+  We will ask your some questions about your research software. Based on your answers, we will suggest the most relevant best practices and some relevant resources and examples on how to implement them.
 
-  When completed, you can download an overview of your answers as your SMP to serve as reference for yourself and as an overview for any technical support staff you may consult with later.
+  When completed, you can download an overview of your answers as your SMP. This can serve as reference for yourself and as an overview for any technical support staff you may consult with later.
+
+  💡 Note that many of the questions are optional. It's fine if you don't answer these yet. However, we urge you to at least consider their benefit to your software. Having an answer to all of them may well improve the impact of your software.
 terms:
   SMP: |
     SMP: Software Management Plan; terms that deserve some context will be explained is these pop-ups.
