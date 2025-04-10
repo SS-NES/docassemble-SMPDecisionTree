@@ -1,0 +1,16 @@
+---
+mandatory: True
+question: |
+  Hi!
+subquestion: |
+  Welcome to the Software Management Plan ({SMP}) Decision Tree! In this tool, we will ask your some questions about your research software. Based on your answers, we will suggest which best practices are most relevant for you to consider. For each best practice this tool will provide some relevant resources and examples on how to implement them.
+
+  When completed, you can download an overview of your answers as your SMP to serve as reference for yourself and as an overview for any technical support staff you may consult with later.
+terms:
+  SMP: |
+    SMP: Software Management Plan; terms that deserve some context will be explained is these pop-ups.
+buttons:
+  - Let's do this!: continue
+post: |
+  <span style="float: right; opacity: 0.7;">SMP Decision Tree <code>v${ smp_decision_tree_version }</code></span>
+---
