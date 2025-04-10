@@ -80,6 +80,7 @@ subquestion: |
 
 fields:
   - License: software_license
+    required: False
     input type: combobox
     hint: Start typing or select one
     choices:
