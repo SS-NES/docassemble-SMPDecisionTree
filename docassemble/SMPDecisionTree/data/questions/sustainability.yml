@@ -71,13 +71,14 @@ fields:
   - note: |
       ### Code Quality Best Practices
 
-      What coding best practices do you plan to follow in your code?
-
+      What coding best practices do you (plan to) follow in your code?
+      
+      If you use a {software quality checklist}, please point out which one.
       <details>
         <summary><b>Decision Help</b></summary>
-        <p>It is important to make sure your software adheres to relevant code quality standards (code style, modularity, etc.). You should also use tools for collaborative development to measure code quality (e.g. linting tools). For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality) and its following pages.</p>
-
-        <p>If you are using a {software quality checklist}, please point out which one.</p>
+        <p>Adherance to relevant code quality standards ({code style}, {modular programming}, etc.) can improve software quality with relatively little effort. Code quality can be measured and improved using tools for collaborative development (e.g. {static code analysis} or {linter} tools).</p>
+        
+        <p>The <a href="https://book.the-turing-way.org/reproducible-research/code-quality">Turing Way</a> has more information on code quality.</p>
       </details>
   - no label: quality
     hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
@@ -100,6 +101,14 @@ terms:
     A measure of how much of the source code is executed by the test suite.
   software quality checklist: |
     A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
+  code style: |
+    A set of conventions on how to format code. Consistently formatted code will be easier for yourself and others to understand and will therefore contain fewer bugs.
+  modular programming: |
+    A programming style that separates software into self-contained functional pieces. This improves conceptual understanding and reduces duplication, thereby improving software quality and maintenance.
+  static code analysis: |
+    A method to examine code and detect software vulnerabilities before the code is executed or the project is built and deployed.
+  linter: |
+    A development tool that performs static code analysis, and checks (and possibly corrects) the code style.
 ---
 mandatory: reuse
 question: |
