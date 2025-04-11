@@ -51,9 +51,24 @@ fields:
 ---
 mandatory: reuse
 question: |
-  Testing
+  Code Quality
 fields:
   - note: |
+      What coding best practices do you (plan to) follow in your code?
+      
+      If you use a {software quality checklist}, please point out which one.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>Adherance to relevant code quality standards ({code style}, {modular programming}, etc.) can improve software quality with relatively little effort. Code quality can be measured and improved using tools for collaborative development (e.g. {static code analysis} or {linter} tools).</p>
+        
+        <p>The <a href="https://book.the-turing-way.org/reproducible-research/code-quality">Turing Way</a> has more information on code quality.</p>
+      </details>
+  - no label: quality
+    hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
+    input type: area
+    rows: 10
+  - note: |
+      ### Testing
       How will your software be tested? Please provide a link to automated testing results, if available.
 
       <details>
@@ -66,22 +81,6 @@ fields:
       </details>
   - no label: testing
     hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
-    input type: area
-    rows: 10
-  - note: |
-      ### Code Quality
-
-      What coding best practices do you (plan to) follow in your code?
-      
-      If you use a {software quality checklist}, please point out which one.
-      <details>
-        <summary><b>Decision Help</b></summary>
-        <p>Adherance to relevant code quality standards ({code style}, {modular programming}, etc.) can improve software quality with relatively little effort. Code quality can be measured and improved using tools for collaborative development (e.g. {static code analysis} or {linter} tools).</p>
-        
-        <p>The <a href="https://book.the-turing-way.org/reproducible-research/code-quality">Turing Way</a> has more information on code quality.</p>
-      </details>
-  - no label: quality
-    hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
     input type: area
     rows: 10
 terms:
