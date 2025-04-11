@@ -69,7 +69,7 @@ fields:
     input type: area
     rows: 10
   - note: |
-      ### Code Quality Best Practices
+      ### Code Quality
 
       What coding best practices do you (plan to) follow in your code?
       
