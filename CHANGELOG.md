@@ -34,6 +34,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add CITATION.cff, CODE_OF_CONDUCT.md, CONTRIBUTING.md files.
 - Add README.dev.md file with installation and development guidance.
 - Add .gitignore to start ignoring temporary development files.
+- Add descriptive terms and helpful links to testing question.
+- Add descriptive terms and helpful links to code quality question.
+- Swapped order of testing and code quality questions.
 
 [unreleased]: https://github.com/SS-NES/docassemble-SMPDecisionTree/compare/v0.0.4...HEAD
 [0.0.4]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.4
