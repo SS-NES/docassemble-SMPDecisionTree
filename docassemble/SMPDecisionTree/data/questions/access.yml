@@ -5,11 +5,17 @@ question: |
 subquestion: |
   Do you plan to make `${ software_name }` {publicly available}?
   
-  If you do not plan to make it publicly available, please provide your reasons.
+  If not, please provide your reasons.
 
   <details>
     <summary><b>Decision Help</b></summary>
-    <p>If you make ${ software_name } publicly available, you will also have to think about what conditions to make ${ software_name } available under, e.g. its license.</p>
+    <p>If you make ${ software_name } publicly available, you will also have to think about what conditions to make ${ software_name } available under and how others will access and use it. You will need to think about:
+    <ul>
+    <li>Where people can find ${ software_name }.</li>
+    <li>How you will explain how to use ${ software_name }.</li>
+    <li>What license ${ software_name } has.</li>
+    <li>How people should refer to (cite) ${ software_name }.</li>
+    </ul></p>
 
     <p>A core belief of <a href="https://book.the-turing-way.org/reproducible-research/open">open research</a> is that the primary outputs of publicly funded research results must be made publicly accessible at some point. Public funding must primarily benefit the general public. This includes research software.</p>
   </details>
