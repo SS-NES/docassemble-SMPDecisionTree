@@ -6,7 +6,7 @@ subquestion: |
   How do you plan to procure long term maintenance of your software?
   <details>
     <summary><b>Decision Help</b></summary>
-    <p>  Make sure there are arrangements in place for the maintenance and reuse of `${ software_name }`. Whenever suitable, develop a retirement strategy for your software. Is there an organization or company that can take over the development?</p>
+    <p>  Make sure there are arrangements in place for the maintenance and reuse of ${ software_name }. Whenever suitable, develop a retirement strategy for your software. Is there an organization or company that can take over the development?</p>
   </details>
 fields:
   - Maintenance: maintenance
