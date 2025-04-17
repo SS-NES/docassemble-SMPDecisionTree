@@ -7,11 +7,18 @@ subquestion: |
 
   <details>
   <summary><b>Decision Help</b></summary>
-  With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
-
+  <p>With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer.</p>
+  
+  <p>If so, you will need to think about:
+    <ul>
+    <li>How you will explain how to use and develop ${ software_name }.</li> <!--documentation-->
+    <li>Which coding best practices to follow to facilitate deployment and use.</li> <!--quality-->
+    <li>How to provide long term maintenance.</li> <!--maintenance-->
+    </ul>
+  </p>
+  
   <br>
   <h5>Example projects that would answer “yes” here</h5>
-
   <ul>
     <li>A software package that you co-develop with collaborators and plan to make available to your research field.</li>
     <li>Tools for extracting, transforming and visualizing visuals of architectural design from PDF files: <a href="https://visarchpy.readthedocs.io">VisArchPy</a></li>
@@ -19,14 +26,12 @@ subquestion: |
    </ul>
 
   <h5>Example projects that would answer “no” here</h5>
-
   <ul>
     <li>Single-use script for a power-line data analysis for one paper.</li>
     <li>A custom BASH application for organizing and backing up millions of files containing results of a weather model running in an in-house computer cluster.</li>
   </ul>
   </details>
   <br>
-
 yesno: multi_user
 ---
 mandatory: multi_user
