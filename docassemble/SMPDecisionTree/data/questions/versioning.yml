@@ -9,7 +9,9 @@ subquestion: |
 
   <details>
     <summary><b>Decision Help</b></summary>
-    <p>Adequate versioning of research software facilitates management of research software, allowing for the identification of specific versions of the software.</p>
+    <p>Adequate versioning of research software facilitates management of research software. It allows identifying specific versions of the software. e.g. the version used for a specific paper. It also enables you to revert to an earlier version in case you introduce bugs while developing `${ software_name }`. Finally, it helps working collaboratively on the same code.</p>
+
+    <p>We recommend using version control from the very start, even for minor scripts. It will be the <a href="https://www.psychologytoday.com/us/blog/joy-and-pain/201504/the-best-time-plant-tree-was-20-years-ago-no-matter">tree you planted twenty years ago</a>.</p>
   
     <p>While there are typical versioning schemes that you can select in this tool, ultimately the choice of how you label your software versions is up to you, as long as other users are capable of understanding your labelling. For this reason we have included the option "Other" in the dropdown menu. If you choose that option, please indicate what your scheme looks like.</p>
   </details>  
