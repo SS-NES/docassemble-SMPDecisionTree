@@ -44,10 +44,14 @@ mandatory: community
 question: |
   Support
 subquestion: |
-  Plan resources for support-related activities such as training, hiring research software engineers, infrastructure, hardware, etc, and regarding the level of service provided by `${ software_name }`. Do you plan to continue support after active development of the software?
+  Do you plan to continue support after active development of the software?
 
-  What level of support will be provided for your users and how will this support be organised?
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Will you plan resources for support-related activities such as training, hiring research software engineers, infrastructure, hardware, etc, and regarding the level of service provided by `${ software_name }`.</p>
 
+    <p>What level of support will be provided for your users and how will this support be organised?</p>
+  </details>
 fields:
   - Support: support
     #default: Personal support for my friends.
