@@ -20,16 +20,19 @@ question: |
 subquestion: |
   What measures will be taken during the project to ensure the long-term sustainability of `${ software_name }`? (less than 300 words)
 
-  Some examples include:
-
-  - A researcher or RSE from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.
-  - A community will co-develop the software and help maintain it afterwards.
-  - Organizing workshops and hands-on user training to create or extend a community around the software.
-  - The software will be developed as part of an overarching software suite used in other (research) projects.
-  - A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.
-  - Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media.
-  - Do you have the resources to procure storage and computer infrastructure required for maintaining the software.
-
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Some examples include:
+    <ul>
+    <li>A researcher or RSE from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.</li>
+    <li>A community will co-develop the software and help maintain it afterwards.</li>
+    <li>Organizing workshops and hands-on user training to create or extend a community around the software.</li>
+    <li>The software will be developed as part of an overarching software suite used in other (research) projects.</li>
+    <li>A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.</li>
+    <li>Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media.</li>
+    <li>Do you have the resources to procure storage and computer infrastructure required for maintaining the software.</li>
+    </ul></p>
+  </details>
 fields:
   - Sustainability: sustainability
     #default: It's so good, it will live forever.
