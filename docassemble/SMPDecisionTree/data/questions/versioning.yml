@@ -3,7 +3,9 @@ mandatory: True
 question: |
   Version Control
 subquestion: |
-  How will you manage versioning of `${ software_name }`? Which version control system will you use to manage your source code? What {versioning scheme} will you apply?
+  How will you manage versioning of `${ software_name }`?
+  
+  Which {version control} system will you use to manage your source code? What {versioning scheme} will you apply?
 
   <details>
     <summary><b>Decision Help</b></summary>
@@ -12,8 +14,10 @@ subquestion: |
     <p>While there are typical versioning schemes that you can select in this tool, ultimately the choice of how you label your software versions is up to you, as long as other users are capable of understanding your labelling. For this reason we have included the option "Other" in the dropdown menu. If you choose that option, please indicate what your scheme looks like.</p>
   </details>  
 terms:
+  version control: |
+    An approach to record changes made in a file or set of files over time.
   versioning scheme: |
-     Typical versioning schemes are [semver](https://semver.org/) or [calver](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
+    Typical versioning schemes are [semver](https://semver.org/) or [calver](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
 
 fields:
   - Version Scheme: version_scheme
