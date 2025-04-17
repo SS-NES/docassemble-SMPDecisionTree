@@ -16,8 +16,8 @@ fields:
 
         <p>Some aspects to be considered:
         <ul>
-        <li>What is the purpose of the software?</li>
-        <li>What is the software’s intended user community?</li>
+        <li>What is the purpose of the software?</li> <!--purpose-->
+        <li>What is the software’s intended user community?</li> <!--community-->
         <li>Why are you developing this and not reusing existing software?</li>
         </ul></p>
       </details>
