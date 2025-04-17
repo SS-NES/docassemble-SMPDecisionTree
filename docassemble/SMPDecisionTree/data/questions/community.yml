@@ -5,10 +5,10 @@ question: |
 subquestion: |
   Do you expect `${ software_name }` to be used by others, or integrated or modified by other developers, now or in the future?
 
-  With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
-
   <details>
   <summary><b>Decision Help</b></summary>
+  With this question, you answer if you expect people not directly or indirectly involved in the original development of the software to make use of it. People, in other words, that need to be taught how to deploy and use the software without being able to readily communicate with the original developer. If so, you will need to provide proper user/developer documentation, as well as follow coding best practices to facilitate deployment and use.
+
   <br>
   <h5>Example projects that would answer “yes” here</h5>
 
