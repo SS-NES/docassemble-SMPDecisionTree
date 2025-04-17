@@ -94,10 +94,14 @@ mandatory: reuse
 question: |
   Packaging
 subquestion: |
-  How will `${ software_name }` be packaged and distributed? Please provide a link to available packaging information (e.g. entry in a packaging registry, if available).
+  How will `${ software_name }` be packaged and distributed?
+  
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Please provide a link to available packaging information (e.g. entry in a packaging registry, if available).</p>
 
-  Use appropriate package managers to allow users to install/deploy your software with ease. Examples include PyPI, CRAN, NPM, Maven, Crates, conda, etc.
-
+    <p>Use appropriate package managers to allow users to install/deploy your software with ease. Examples include PyPI, CRAN, NPM, Maven, Crates, conda, etc.</p>
+  </details>
 fields:
   - Packaging: packaging
     #default: I will package it in a cardboard box.
