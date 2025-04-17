@@ -38,11 +38,11 @@ mandatory: multi_user
 question: |
   Community
 subquestion: |
-  Does `${ software_name }` have, or do you plan to build a community around it?
+  Does `${ software_name }` have, or do you plan to build a {community} around it?
 
   <details>
   <summary><b>Decision Help</b></summary>
-  <p>With this question, you answer if you expect a community to form around your software. With community we mean that other people from outside your direct collaborators or contacts are using or working on the software (semi-)autonomously. If so, you will need to plan for the software’s long-term sustainability and identify potential risks to its proper maintenance.</p>
+  <p>With this question, you answer if you expect a community to form around your software. If so, you will need to plan for the software’s long-term sustainability and identify potential risks to its proper maintenance.</p>
   <h5>Example projects that would answer “yes” here</h5>
   <ul>
     <li>A jupyter notebook extension that enables researchers across disciplines to prepare, upload and download datasets from Zenodo, and other research data repositories: <a href="https://fairly.readthedocs.io">fairly.readthedocs.io</a></li>
@@ -54,5 +54,8 @@ subquestion: |
     </ul>
   </details>
   <br>
+terms:
+  community: |
+    A group of people, generally outside your direct collaborators or contacts, that is using or developing the software (semi-)autonomously.
 yesno: community
 ---
