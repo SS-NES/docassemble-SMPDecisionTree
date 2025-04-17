@@ -3,7 +3,7 @@ mandatory: True
 question: |
   Reuse/Reproduce
 subquestion: |
-  Do you expect `${ software_name }` to be used for more than just its initial purpose, or used by external users?
+  Do you expect `${ software_name }` to be used for more than just its initial purpose, used for a long time, or used by external users?
 
   <details>
     <summary><b>Decision Help</b></summary>
