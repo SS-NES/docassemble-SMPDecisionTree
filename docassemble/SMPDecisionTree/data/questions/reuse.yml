@@ -5,15 +5,14 @@ question: |
 subquestion: |
   Do you expect `${ software_name }` to be used for more than just its initial purpose, or used by external users?
 
-  With this question, you answer if your software can be reused at a later stage or on a different project. If so, documentation needs to be provided in order to facilitate reuse.
-
-  This question also encompasses whether the software (or suite of scripts/notebooks/data) is intended to be entirely reproducible. This is particularly relevant when the software and its outputs are integral to a peer-reviewed publication. In such instances, we recommend adding a data management plan to describe the underlying input and output data, in collaboration with your local Data Competence Center (DCC) or Publisher.
-
   <details>
     <summary><b>Decision Help</b></summary>
+    <p>With this question, you answer if your software can be reused at a later stage or on a different project. If so, documentation needs to be provided in order to facilitate reuse.</p>
+
+    <p>This question also encompasses whether the software (or suite of scripts/notebooks/data) is intended to be entirely reproducible. This is particularly relevant when the software and its outputs are integral to a peer-reviewed publication. In such instances, we recommend adding a data management plan to describe the underlying input and output data, in collaboration with your local Data Competence Center (DCC) or Publisher.</p>
+
     <br>
     <h5>Example projects that would answer “yes” here</h5>
-
     <ul>
       <li>Scripts or software that will be reused internally in your collaboration.</li>
       <li>Software that provides a certain type of standard/common analysis given a certain type of input data (i.e. emission line measurements).</li>
