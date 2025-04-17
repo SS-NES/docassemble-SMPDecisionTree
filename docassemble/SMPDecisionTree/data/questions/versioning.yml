@@ -41,9 +41,13 @@ fields:
     input type: area
   - note: |
       ### Repository
-      Where do you plan to make `${ software_name }` publicly available? The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com).
+      Where do you plan to make `${ software_name }` publicly available?
 
       Please provide links to the software if this is already the case.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like <a href="https://www.github.com">GitHub</a> or <a href="https://www.gitlab.com">GitLab</a>.</p>
+      </details>
     show if:
       code: public or reuse
   - no label: repository
