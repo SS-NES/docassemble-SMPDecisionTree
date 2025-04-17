@@ -3,13 +3,21 @@ mandatory: True
 question: |
   Reuse/Reproduce
 subquestion: |
-  Do you expect `${ software_name }` to be used for more than just its initial purpose, used for a long time, or used by external users?
+  Do you expect `${ software_name }` to be used for more than just its initial purpose, used for a long time, or have external users?
 
   <details>
     <summary><b>Decision Help</b></summary>
-    <p>With this question, you answer if your software can be reused at a later stage or on a different project. If so, documentation needs to be provided in order to facilitate reuse.</p>
+    <p>With this question, you answer if your software can be reused at a later stage or on a different project. If so, you will need to think about:
+    <ul>
+    <li>Who will use or contribute to ${ software_name }.</li> <!--community-->
+    <li>Where people can find ${ software_name }.</li> <!--repository-->
+    <li>How you will explain how to use ${ software_name }.</li> <!--documentation-->
+    <li>Whether you will provide comprehensive support or training.</li> <!--support-->
+    <li>Whether you will package ${ software_name } for easy distribution.</li> <!--packaging-->
+    </ul></p>
+    </p>
 
-    <p>This question also encompasses whether the software (or suite of scripts/notebooks/data) is intended to be entirely reproducible. This is particularly relevant when the software and its outputs are integral to a peer-reviewed publication. In such instances, we recommend adding a data management plan to describe the underlying input and output data, in collaboration with your local Data Competence Center (DCC) or Publisher.</p>
+    <p>This question also encompasses whether ${ software_name } is intended to be entirely reproducible. This is particularly relevant when the software and its outputs are integral to a peer-reviewed publication. In such instances, we recommend adding a data management plan to describe the underlying input and output data, in collaboration with your local Data Competence Center (DCC) or Publisher.</p>
 
     <br>
     <h5>Example projects that would answer “yes” here</h5>
