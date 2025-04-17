@@ -52,7 +52,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: reuse
+mandatory: reuse or multi_user
 question: |
   Testing
 fields:
