@@ -3,12 +3,15 @@ mandatory: True
 question: |
   Risk Analysis
 subquestion: |
-  Consider other factors that could have an impact on `${ software_name }`, or could be caused by `${ software_name }`. For example compliance with privacy policies, security considerations, reliability requirements, portability / vendor lock-in, etc.
+  What are the main external factors that should be considered by developers and users of the Software?
+  
+  These could include data privacy, information security, etc.
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Consider other factors that could have an impact on `${ software_name }`, or could be caused by `${ software_name }`. For example compliance with privacy policies, security considerations, reliability requirements, portability / vendor lock-in, etc.</p>
 
-  Describe the main external factors that should be considered by developers and users of the Software. These could include data privacy, information security, etc.
-
-  Are you using ML (machine learning) or AI (artificial intelligence) in your project? This might have implications on your output. Decisions based on machine learning models might carry over biases of your input data. Output based on LLMs (large language models) often have unknown IP (intellectual property) or ownership. When in doubt, ask your legal department for assistance.
-
+    <p>Are you using ML (machine learning) or AI (artificial intelligence) in your project? This might have implications on your output. Decisions based on machine learning models might carry over biases of your input data. Output based on LLMs (large language models) often have unknown IP (intellectual property) or ownership. When in doubt, ask your legal department for assistance.</p>
+  </details>
 fields:
   - Risk Analysis: risk_analysis
     #default: My software is high risk, high reward.
