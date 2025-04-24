@@ -9,6 +9,7 @@ subquestion: |
 
 fields:
   - Maintenance: maintenance
+    required: False
     hint: The LogoFAIL project runs for four years after which either Microsoft will take it over or the software will be retired. In any case, the vulnerability will surely be patched by then.
     input type: area
     rows: 10
@@ -31,6 +32,7 @@ subquestion: |
 
 fields:
   - Sustainability: sustainability
+    required: False
     hint: During the project we will build a community around Shellshock. After a second round of funding, a non-profit will be set up to govern the project for the next 20 years.
     input type: area
     rows: 10
@@ -45,6 +47,7 @@ subquestion: |
 
 fields:
   - Support: support
+    required: False
     hint: DeadBolt will have a self-hosted helpdesk ticket system (osTicket) and a telephone hotline for our ransomware victims. We intend to answer requests within 24 hours.
     input type: area
     rows: 10
@@ -64,6 +67,7 @@ fields:
         <p>The <a href="https://book.the-turing-way.org/reproducible-research/code-quality">Turing Way</a> has more information on code quality.</p>
       </details>
   - no label: quality
+    required: False
     hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
     input type: area
     rows: 10
@@ -80,6 +84,7 @@ fields:
         <p>The <a href="https://book.the-turing-way.org/reproducible-research/testing">Turing Way</a> provides more motivation for why testing is critical. It also explains the testing concepts stated above.</p>
       </details>
   - no label: testing
+    required: False
     hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
     input type: area
     rows: 10
@@ -119,6 +124,7 @@ subquestion: |
 
 fields:
   - Packaging: packaging
+    required: False
     hint: "XZ Utils will be packaged on Pypi (link: ...) and conda (link: ...)"
     input type: area
     rows: 10

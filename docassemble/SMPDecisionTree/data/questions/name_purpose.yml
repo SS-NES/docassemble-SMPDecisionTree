@@ -18,6 +18,7 @@ fields:
       - What is the software’s intended user community?
       - Why are you developing this and not reusing existing software?
   - no label: purpose
+    required: False
     hint: This BASH script proves the Hauptvermutung conjecture and generates some visual examples. It is intended to be used by the general math community. We are developing this software because no prior software like this exists since no one else proved the Hauptvermutung.
     input type: area
     rows: 10

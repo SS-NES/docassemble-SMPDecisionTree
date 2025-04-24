@@ -26,7 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.5] - yyyy-mm-dd
 
-- Improved contribution guides
+- Improved contribution guides.
+- Split questions into separate yml files by concept.
+- Made many question fields optional.
 
 ### Added
 
@@ -34,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add CITATION.cff, CODE_OF_CONDUCT.md, CONTRIBUTING.md files.
 - Add README.dev.md file with installation and development guidance.
 - Add .gitignore to start ignoring temporary development files.
+- Added a note to the introduction screen that many questions are optional yet beneficial.
 - Add descriptive terms and helpful links to testing question.
 - Add descriptive terms and helpful links to code quality question.
 - Swapped order of testing and code quality questions.
