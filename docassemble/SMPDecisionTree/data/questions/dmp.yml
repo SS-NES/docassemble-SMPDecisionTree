@@ -7,7 +7,7 @@ subquestion: |
 
 fields:
   - Data Management Plan: data_management_plan
-    #default: Here's my DMP
+    required: False
     hint: "We are using web-scraped Facebook data and output a list of potential burglary victims in The Netherlands. Our DMP can be found here: https://dmp.example.com"
     input type: area
     rows: 10

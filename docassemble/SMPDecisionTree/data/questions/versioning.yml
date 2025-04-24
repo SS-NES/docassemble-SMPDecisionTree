@@ -23,6 +23,7 @@ terms:
 
 fields:
   - Version Scheme: version_scheme
+    required: False
     choices:
       - Semantic Versioning
       - Calendar Versioning
@@ -34,6 +35,7 @@ fields:
     hint: Please explain which other version scheme you will use, or why you will not use any.
     input type: area
   - Version Control: version_control
+    required: False
     choices:
       - Git
       - Mercurial
@@ -57,6 +59,7 @@ fields:
     show if:
       code: public or reuse
   - no label: repository
+    required: False
     hint: The software will be available at https://uni_gotham.gitlab.com/RowHammer
     input type: area
     rows: 10

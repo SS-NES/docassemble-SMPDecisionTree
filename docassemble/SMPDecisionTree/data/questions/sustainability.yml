@@ -10,7 +10,7 @@ subquestion: |
   </details>
 fields:
   - Maintenance: maintenance
-    #default: No maintenance, my software is perfect.
+    required: False
     hint: The LogoFAIL project runs for four years after which either Microsoft will take it over or the software will be retired. In any case, the vulnerability will surely be patched by then.
     input type: area
     rows: 10
@@ -36,7 +36,7 @@ subquestion: |
   </details>
 fields:
   - Sustainability: sustainability
-    #default: It's so good, it will live forever.
+    required: False
     hint: During the project we will build a community around Shellshock. After a second round of funding, a non-profit will be set up to govern the project for the next 20 years.
     input type: area
     rows: 10
@@ -58,40 +58,72 @@ subquestion: |
   </details>
 fields:
   - Support: support
-    #default: Personal support for my friends.
+    required: False
     hint: DeadBolt will have a self-hosted helpdesk ticket system (osTicket) and a telephone hotline for our ransomware victims. We intend to answer requests within 24 hours.
     input type: area
     rows: 10
 ---
 mandatory: reuse or multi_user
 question: |
-  Testing
+  Code Quality
 fields:
   - note: |
-      How will your software be tested? Please provide a link to automated testing results, if available.
-
-      Incorporate tests to ensure your software continues to work as intended. Different types of testing (unit, functional, integration, linting, typing, regression, etc.) could be used. Tests in turn should also be documented. Coverage tools should also be used to assess the extent of the tested code.
-  - no label: testing
-    #default: manual testing
-    hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
-    input type: area
-    rows: 10
-  - note: |
-      ### Code Quality Best Practices
-
-      What coding best practices do you plan to follow in your code?
-
-      It is important to make sure your software adheres to relevant code quality standards (styling, modularity, etc.). You should also use tools for collaborative development to measure code quality. For more information on code quality, you can look up the chapter of the [Turing Way](https://book.the-turing-way.org/reproducible-research/code-quality) and its following pages.
-
-      If you are using a {software quality checklist}, please point out which one.
+      What coding best practices do you (plan to) follow in your code?
+      
+      If you use a {software quality checklist}, please point out which one.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>Adherance to relevant code quality standards ({code style}, {modular programming}, etc.) can improve software quality with relatively little effort. Code quality can be measured and improved using tools for collaborative development (e.g. {static code analysis} or {linter} tools).</p>
+        
+        <p>The <a href="https://book.the-turing-way.org/reproducible-research/code-quality">Turing Way</a> has more information on code quality.</p>
+      </details>
   - no label: quality
-    #default: I only write perfect code.
+    required: False
     hint: Our software currently covers 85% of the checklist at https://www.bestpractices.dev. We aim for 95% at the end of the project.
     input type: area
     rows: 10
+  - note: |
+      ### Testing
+      How will your software be tested? Please provide a link to automated testing results, if available.
+
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>{Testing code} thoroughly and frequently is vital to ensure reliable, reproducible research. {Automating your tests} means you will never forget to check for known points of failure.</p>
+
+        <p>Different types of testing ({unit}, {integration}, {acceptance}, {regression}, etc.) could be used. {Code coverage} tools should also be used to assess the extent of the code tested.</p>
+
+        <p>The <a href="https://book.the-turing-way.org/reproducible-research/testing">Turing Way</a> provides more motivation for why testing is critical. It also explains the testing concepts stated above.</p>
+      </details>
+  - no label: testing
+    required: False
+    hint: Testing is only manual for now, but we plan to use automated testing as part of a CI/CD (Continuous Integration/Continuous Deployment) pipeline.
+    input type: area
+    rows: 10
 terms:
+  testing code: |
+    You probably already did a lot of tests while making sure your code works as intended. Keeping these tests around and structurally executing them makes your code more reliable and trustworthy.
+  automating your tests: |
+    Either running tests at fixed intervals (e.g. nightly [Jenkins](https://www.jenkins.io/) runs), or whenever changes are committed (e.g. through [continuous integration](https://book.the-turing-way.org/reproducible-research/ci)).
+  unit: |
+    A level of software testing where small units of software are tested individually.
+  integration: |
+    A level of software testing where units of software are combined and tested as a group.
+  acceptance: |
+    A level of software testing where a system is tested for compliance with project requirements.
+  regression: |
+    A style of software testing where the results of tests after changes are compared to the results before.
+  code coverage: |
+    A measure of how much of the source code is executed by the test suite.
   software quality checklist: |
     A checklist outlining useful software best practices. If your institution does not have their own, you can find one at [bestpractices.dev](https://www.bestpractices.dev).
+  code style: |
+    A set of conventions on how to format code. Consistently formatted code will be easier for yourself and others to understand and will therefore contain fewer bugs.
+  modular programming: |
+    A programming style that separates software into self-contained functional pieces. This improves conceptual understanding and reduces duplication, thereby improving software quality and maintenance.
+  static code analysis: |
+    A method to examine code and detect software vulnerabilities before the code is executed or the project is built and deployed.
+  linter: |
+    A development tool that performs static code analysis, and checks (and possibly corrects) the code style.
 ---
 mandatory: reuse
 question: |
@@ -107,7 +139,7 @@ subquestion: |
   </details>
 fields:
   - Packaging: packaging
-    #default: I will package it in a cardboard box.
+    required: False
     hint: "XZ Utils will be packaged on Pypi (link: ...) and conda (link: ...)"
     input type: area
     rows: 10

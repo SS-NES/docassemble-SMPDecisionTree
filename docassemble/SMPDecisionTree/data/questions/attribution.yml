@@ -38,9 +38,6 @@ subquestion: |
   Open-source software still is the intellectual property of someone, even if other people are permitted to use it according to the license terms.
 fields:
   - Ownership: ownership
-    #default: |
-    #  long description
-    #  multiple lines
     hint: University of Springfield, Department of Nuclear Physics
     input type: area
 ---
@@ -51,9 +48,7 @@ subquestion: |
   Is there a research project associated with `${ software_name }`? Is it part of a call or consortium? Please provide the context which the software is embedded in.
 fields:
   - Research Project Context: research_project_context
-    #default: |
-    #  long description
-    #  multiple lines
+    required: False
     hint: This software is used in the MultiRay (see https://multiray.example.com) project, which is part of the CaptureTheSky call (see https://CTS.example.com).
     input type: area
     rows: 10
@@ -78,7 +73,7 @@ terms:
     Digital Object Identifier: designed to be used by humans as well as machines, DOIs identify objects persistently. They allow things to be uniquely identified and accessed reliably. [Details](https://www.doi.org/the-identifier/what-is-a-doi/)
 fields:
   - Citation: citation
-    #default: cite me!
+    required: False
     hint: "CFF file in the repository (link: ...), DOI on Zenodo (link: ...)"
     input type: area
     rows: 10
