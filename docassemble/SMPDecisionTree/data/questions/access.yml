@@ -3,12 +3,22 @@ mandatory: True
 question: |
   Software Access
 subquestion: |
-  Do you plan to make `${ software_name }` publicly available?
+  Do you plan to make `${ software_name }` {publicly available}?
+  
+  If not, please provide your reasons.
 
-  With this question, you answer if you plan on making your software available on a searchable and accessible platform where others can find it. If so, you will have to also think about what conditions to make `${ software_name }` available under, e.g. its license.
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>If you make ${ software_name } publicly available, you will also have to think about what conditions to make ${ software_name } available under and how others will access and use it. You will need to think about:
+    <ul>
+    <li>Where people can find ${ software_name }.</li> <!--repository-->
+    <li>How you will explain how to use ${ software_name }.</li> <!--documentation-->
+    <li>What license ${ software_name } has.</li> <!--license-->
+    <li>How people should refer to (cite) ${ software_name }.</li> <!--citation-->
+    </ul></p>
 
-  If you do not plan to make it publicly available, please provide your reasons.
-
+    <p>A core belief of <a href="https://book.the-turing-way.org/reproducible-research/open">open research</a> is that the primary outputs of publicly funded research results must be made publicly accessible at some point. Public funding must primarily benefit the general public. This includes research software.</p>
+  </details>
 fields:
   - "We will make `${ software_name }` publicly available": public
     datatype: yesnoradio
@@ -18,4 +28,7 @@ fields:
       is: False
     hint: Please explain why you will not publish your code
     input type: area
+terms:
+  publicly available: |
+    Available on a accessible and searchable platform, where anyone can find it.
 ---

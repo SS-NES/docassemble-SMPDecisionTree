@@ -3,10 +3,11 @@ mandatory: multi_user
 question: |
   Maintenance
 subquestion: |
-  Make sure there are arrangements in place for the maintenance and reuse of `${ software_name }`. Whenever suitable, develop a retirement strategy for your software. Is there an organization or company that can take over the development?
-
   How do you plan to procure long term maintenance of your software?
-
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>  Make sure there are arrangements in place for the maintenance and reuse of ${ software_name }. Whenever suitable, develop a retirement strategy for your software. Is there an organization or company that can take over the development?</p>
+  </details>
 fields:
   - Maintenance: maintenance
     required: False
@@ -20,31 +21,41 @@ question: |
 subquestion: |
   What measures will be taken during the project to ensure the long-term sustainability of `${ software_name }`? (less than 300 words)
 
-  Some examples include:
-
-  - A researcher or RSE from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.
-  - A community will co-develop the software and help maintain it afterwards.
-  - Organizing workshops and hands-on user training to create or extend a community around the software.
-  - The software will be developed as part of an overarching software suite used in other (research) projects.
-  - A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.
-  - Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media.
-  - Do you have the resources to procure storage and computer infrastructure required for maintaining the software.
-
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Some examples include:
+    <ul>
+    <li>A researcher or {RSE} from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.</li>
+    <li>A community will co-develop the software and help maintain it afterwards.</li>
+    <li>Organizing workshops and hands-on user training to create or extend a community around the software.</li>
+    <li>The software will be developed as part of an overarching software suite used in other (research) projects.</li>
+    <li>A commercial partner interested in exploiting the software is included as a co-applicant on the basis of a concrete in-cash or in-kind investment.</li>
+    <li>Is it necessary to consider measures to extend the longevity of the software?  For example, obtain funding for further development, adopt use of the software into courses, or increase outreach through mainstream media.</li>
+    <li>Do you have the resources to procure storage and computer infrastructure required for maintaining the software.</li>
+    </ul></p>
+  </details>
 fields:
   - Sustainability: sustainability
     required: False
     hint: During the project we will build a community around Shellshock. After a second round of funding, a non-profit will be set up to govern the project for the next 20 years.
     input type: area
     rows: 10
+terms:
+  RSE: |
+    Research Software Engineer.
 ---
 mandatory: community
 question: |
   Support
 subquestion: |
-  Plan resources for support-related activities such as training, hiring research software engineers, infrastructure, hardware, etc, and regarding the level of service provided by `${ software_name }`. Do you plan to continue support after active development of the software?
+  Do you plan to continue support after active development of the software?
 
-  What level of support will be provided for your users and how will this support be organised?
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Will you plan resources for support-related activities such as training, hiring research software engineers, infrastructure, hardware, etc, and regarding the level of service provided by ${ software_name }.</p>
 
+    <p>What level of support will be provided for your users and how will this support be organised?</p>
+  </details>
 fields:
   - Support: support
     required: False
@@ -52,7 +63,7 @@ fields:
     input type: area
     rows: 10
 ---
-mandatory: reuse
+mandatory: reuse or multi_user
 question: |
   Code Quality
 fields:
@@ -118,10 +129,14 @@ mandatory: reuse
 question: |
   Packaging
 subquestion: |
-  How will `${ software_name }` be packaged and distributed? Please provide a link to available packaging information (e.g. entry in a packaging registry, if available).
+  How will `${ software_name }` be packaged and distributed?
+  
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Please provide a link to available packaging information (e.g. entry in a packaging registry, if available).</p>
 
-  Use appropriate package managers to allow users to install/deploy your software with ease. Examples include PyPI, CRAN, NPM, Maven, Crates, conda, etc.
-
+    <p>Use appropriate package managers to allow users to install/deploy your software with ease. Examples include PyPI, CRAN, NPM, Maven, Crates, conda, etc.</p>
+  </details>
 fields:
   - Packaging: packaging
     required: False

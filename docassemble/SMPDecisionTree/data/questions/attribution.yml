@@ -57,12 +57,20 @@ mandatory: public
 question: |
   Citation
 subquestion: |
-  How will users of `${ software_name }` be able to cite your software? Please provide a link to your software citation file {CFF} and/or Digital Object Identifier {DOI} if available.
+  How will users of `${ software_name }` be able to cite your software?
+  
+  Please provide a link to your {CFF} and/or {DOI} if available.
+
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Providing standardized citation guidelines facilitates access, transparency and potentially reproducibility and reuse of the software, and credit for yourself and other contributors.
+    </p>
+  </details>
 terms:
   CFF: |
     `CITATION.cff` files are plain text files with human- and machine-readable citation information for software (and datasets). Code developers can include them in their repositories to let others know how to correctly cite their software. [Details](https://citation-file-format.github.io/)
   DOI: |
-    Designed to be used by humans as well as machines, DOIs identify objects persistently. They allow things to be uniquely identified and accessed reliably. [Details](https://www.doi.org/the-identifier/what-is-a-doi/)
+    Digital Object Identifier: designed to be used by humans as well as machines, DOIs identify objects persistently. They allow things to be uniquely identified and accessed reliably. [Details](https://www.doi.org/the-identifier/what-is-a-doi/)
 fields:
   - Citation: citation
     required: False

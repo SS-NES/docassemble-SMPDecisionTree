@@ -10,13 +10,17 @@ fields:
   - note: |
       Please provide a brief description of your software or framework, stating its purpose and intended user community, if any.
 
-      Clearly state the purpose of the software. Provide general information such as: what problem does it solve, who is the intended audience, what are its advantages and limitations, etc. A clear explanation of the purpose of the software helps the developer focus on its specific needs.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>Clearly state the purpose of the software. Provide general information such as: what problem does it solve, who is the intended audience, what are its advantages and limitations, etc. A clear explanation of the purpose of the software helps the developer focus on its specific needs.</p>
 
-      Some aspects to be considered:
-
-      - What is the purpose of the software?
-      - What is the software’s intended user community?
-      - Why are you developing this and not reusing existing software?
+        <p>Some aspects to be considered:
+        <ul>
+        <li>What is the purpose of the software?</li> <!--purpose-->
+        <li>What is the software’s intended user community?</li> <!--community-->
+        <li>Why are you developing this and not reusing existing software?</li>
+        </ul></p>
+      </details>
   - no label: purpose
     required: False
     hint: This BASH script proves the Hauptvermutung conjecture and generates some visual examples. It is intended to be used by the general math community. We are developing this software because no prior software like this exists since no one else proved the Hauptvermutung.

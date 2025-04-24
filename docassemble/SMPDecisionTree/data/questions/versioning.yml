@@ -3,14 +3,23 @@ mandatory: True
 question: |
   Version Control
 subquestion: |
-  How will you manage versioning of `${ software_name }`? Which version control system will you use to manage your source code? What {versioning scheme} will you apply?
-
-  Adequate versioning of research software facilitates management of research software, allowing for the identification of specific versions of the software.
+  How will you manage versioning of `${ software_name }`?
   
-  While there are typical versioning schemes that you can select in this tool, ultimately the choice of how you label your software versions is up to you, as long as other users are capable of understanding your labelling. For this reason we have included the option "Other" in the dropdown menu. If you choose that option, please indicate what your scheme looks like.
+  Which {version control} system will you use to manage your source code? What {versioning scheme} will you apply?
+
+  <details>
+    <summary><b>Decision Help</b></summary>
+    <p>Adequate versioning of research software facilitates management of research software. It allows identifying specific versions of the software. e.g. the version used for a specific paper. It also enables you to revert to an earlier version in case you introduce bugs while developing `${ software_name }`. Finally, it helps working collaboratively on the same code.</p>
+
+    <p>We recommend using version control from the very start, even for minor scripts. It will be the <a href="https://www.psychologytoday.com/us/blog/joy-and-pain/201504/the-best-time-plant-tree-was-20-years-ago-no-matter">tree you planted twenty years ago</a>.</p>
+  
+    <p>While there are typical versioning schemes that you can select in this tool, ultimately the choice of how you label your software versions is up to you, as long as other users are capable of understanding your labelling. For this reason we have included the option "Other" in the dropdown menu. If you choose that option, please indicate what your scheme looks like.</p>
+  </details>  
 terms:
+  version control: |
+    An approach to record changes made in a file or set of files over time.
   versioning scheme: |
-     Typical versioning schemes are [semver](https://semver.org/) or [calver](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
+    Typical versioning schemes are [Semantic Versioning](https://semver.org/) or [Calendar Versioning](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
 
 fields:
   - Version Scheme: version_scheme
@@ -40,9 +49,13 @@ fields:
     input type: area
   - note: |
       ### Repository
-      Where do you plan to make `${ software_name }` publicly available? The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like [GitHub](https://www.github.com) or [GitLab](https://www.gitlab.com).
+      Where do you plan to make `${ software_name }` publicly available?
 
       Please provide links to the software if this is already the case.
+      <details>
+        <summary><b>Decision Help</b></summary>
+        <p>The most important consideration is that potential users of the software are able to get a copy they can use. This is often a public or self-hosted repository like <a href="https://www.github.com">GitHub</a> or <a href="https://www.gitlab.com">GitLab</a>.</p>
+      </details>
     show if:
       code: public or reuse
   - no label: repository
