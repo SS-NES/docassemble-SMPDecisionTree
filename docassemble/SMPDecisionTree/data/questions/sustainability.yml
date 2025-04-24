@@ -25,7 +25,7 @@ subquestion: |
     <summary><b>Decision Help</b></summary>
     <p>Some examples include:
     <ul>
-    <li>A researcher or RSE from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.</li>
+    <li>A researcher or {RSE} from a research institute is allocated to the project to co-develop the software during the project and help maintain it afterwards.</li>
     <li>A community will co-develop the software and help maintain it afterwards.</li>
     <li>Organizing workshops and hands-on user training to create or extend a community around the software.</li>
     <li>The software will be developed as part of an overarching software suite used in other (research) projects.</li>
@@ -40,6 +40,9 @@ fields:
     hint: During the project we will build a community around Shellshock. After a second round of funding, a non-profit will be set up to govern the project for the next 20 years.
     input type: area
     rows: 10
+terms:
+  RSE: |
+    Research Software Engineer.
 ---
 mandatory: community
 question: |
