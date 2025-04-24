@@ -19,7 +19,7 @@ terms:
   version control: |
     An approach to record changes made in a file or set of files over time.
   versioning scheme: |
-    Typical versioning schemes are [semver](https://semver.org/) or [calver](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
+    Typical versioning schemes are [Semantic Versioning](https://semver.org/) or [Calendar Versioning](https://calver.org/). It is usually discouraged to use a non-standard one or invent your own.
 
 fields:
   - Version Scheme: version_scheme
