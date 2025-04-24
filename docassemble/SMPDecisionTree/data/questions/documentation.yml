@@ -18,6 +18,7 @@ fields:
         Please provide a link to the documentation if available. How will you document your software’s contribution guidelines and governance structure? If you have any (additional) plans on how your software will be documented (e.g. creating tutorials, incorporating it in teaching, etc.) please specify.
       </details>
   - no label: user_documentation
+    required: False
     hint: The documentation is part of the repository and will be generated with each release. An automated process publishes each version at https://sky-scanner.readthedocs.com
     input type: area
     rows: 10
@@ -33,6 +34,7 @@ fields:
     show if:
       code: reuse
   - no label: developer_documentation
+    required: False
     hint: The developer documentation is part of the repository. It is a file called `README.dev.md`.
     input type: area
     rows: 10
@@ -48,6 +50,7 @@ fields:
       Please provide a link to the installation documentation if available. This documentation should include a complete and unambiguous description of dependencies to other software, datasets, and hardware.
       </details>
   - no label: deployment_documentation
+    required: False
     hint: The deployment documentation is a living document which is versioned with the software. It can be found at https://docs.google.com/heartbleed_deploy_doc
     input type: area
     rows: 10

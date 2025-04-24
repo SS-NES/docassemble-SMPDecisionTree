@@ -11,7 +11,7 @@ subquestion: |
 
 fields:
   - Risk Analysis: risk_analysis
-    #default: My software is high risk, high reward.
+    required: False
     hint: Right now our university department discourages the use of our ChatGPT software to filter new applicants. We are actively working with management to change that.
     input type: area
     rows: 10
