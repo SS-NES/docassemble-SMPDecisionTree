@@ -150,7 +150,7 @@ If you have deployed docassemble locally, you can use the scripts `pull_playgrou
 
 `pull_playground.sh` pulls the interview files from a locally running docker container to this repository.
 
-`push_playground.sh` pushes the interview files from this repository to a locally running docker container.
+`push_playground.sh` pushes the interview files from this repository to a locally running docker container. Refresh the browser page and run the questionnaire from the playground.
 
 Both scripts accept these optional input arguments:
 * `-a [docassemble account number]` (default: 1, which is usually admin@admin.com)
