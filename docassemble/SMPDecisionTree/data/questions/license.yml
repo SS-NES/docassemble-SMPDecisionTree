@@ -1,5 +1,6 @@
 ---
 mandatory: public
+section: section_license
 question: |
   License
 subquestion: |
@@ -697,4 +698,8 @@ fields:
       is: Other
     hint: Please explain why an SPDX-type license does not suffice
     input type: area
+---
+# When clicking on the navigation section "License", ask again the question that defines the variable `software_license`.
+event: section_license
+code: force_ask('software_license')
 ---

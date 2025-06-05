@@ -1,5 +1,6 @@
 ---
 mandatory: multi_user
+section: section_maintenance
 question: |
   Maintenance
 subquestion: |
@@ -15,7 +16,12 @@ fields:
     input type: area
     rows: 10
 ---
+# When clicking on the navigation section "Maintenance", ask again the question that defines the variable `maintenance`.
+event: section_maintenance
+code: force_ask('maintenance')
+---
 mandatory: community
+section: section_sustainability
 question: |
   Sustainability
 subquestion: |
@@ -44,7 +50,12 @@ terms:
   RSE: |
     Research Software Engineer.
 ---
+# When clicking on the navigation section "Sustainability", ask again the question that defines the variable `sustainability`.
+event: section_sustainability
+code: force_ask('sustainability')
+---
 mandatory: community
+section: section_support
 question: |
   Support
 subquestion: |
@@ -63,7 +74,12 @@ fields:
     input type: area
     rows: 10
 ---
+# When clicking on the navigation section "Support", ask again the question that defines the variable `support`.
+event: section_support
+code: force_ask('support')
+---
 mandatory: reuse or multi_user
+section: section_quality
 question: |
   Code Quality
 fields:
@@ -125,7 +141,12 @@ terms:
   linter: |
     A development tool that performs static code analysis, and checks (and possibly corrects) the code style.
 ---
+# When clicking on the navigation section "Quality", ask again the question that defines the variable `quality`.
+event: section_quality
+code: force_ask('quality')
+---
 mandatory: reuse
+section: section_packaging
 question: |
   Packaging
 subquestion: |
@@ -143,4 +164,8 @@ fields:
     hint: "XZ Utils will be packaged on Pypi (link: ...) and conda (link: ...)"
     input type: area
     rows: 10
+---
+# When clicking on the navigation section "Packaging", ask again the question that defines the variable `packaging`.
+event: section_packaging
+code: force_ask('packaging')
 ---

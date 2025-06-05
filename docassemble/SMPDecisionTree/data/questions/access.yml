@@ -1,5 +1,11 @@
 ---
 mandatory: True
+section: section_access
+# When setting the `public` variable in this section, we want to recalculate the items in the navigation bar.
+# In the root .yml file there is a code section that sets a dummy `navigation_recalculated` variable.
+# By depending on (`depends on`) this variable here, we force it to be re-evaluated and thus re-run the navigation sections code.
+# TODO This is very clunky. If there's an easier way, feel free to improve this.
+depends on: navigation_recalculated
 question: |
   Software Access
 subquestion: |
@@ -31,4 +37,12 @@ fields:
 terms:
   publicly available: |
     Available on a accessible and searchable platform, where anyone can find it.
+---
+# When clicking on the navigation section "Access", ask again the question that defines the variable `public`.
+event: section_access
+code: force_ask('public')
+---
+# When clicking on the navigation section "Scope", ask again the question that defines the variable `public`.
+event: section_scope
+code: force_ask('public')
 ---

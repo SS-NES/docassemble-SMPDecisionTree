@@ -18,15 +18,16 @@ metadata:
     - software
 ---
 features:
-  navigation: False
+  navigation: True
   progress bar: False
 ---
 mandatory: True
 code: |
-  smp_decision_tree_version = "0.0.5"
-  community = False
-  reuse = False
-  multi_user = False
+  smp_decision_tree_version = "0.0.6"
+  community = None
+  reuse = None
+  multi_user = None
+  public = None
   smp_version = "0.1.0"
   release_date = today()
 ---
@@ -47,6 +48,86 @@ edit:
   - name
   - address
 allow reordering: True
+---
+initial: True
+code: |
+
+  # TODO Right now we have to duplicate the questionnaire flow logic here. Can we generate this instead?
+
+  # When setting switch question variables, we want to recalculate the items in the navigation bar.
+  # This code sets a dummy `navigation_recalculated` variable.
+  # By having the switch question variables depend on (`depends on`) this variable here, we force `navigation_recalculated` to be re-evaluated and thus re-run this code.
+  # TODO This is very clunky. If there's an easier way, feel free to improve this.
+
+  scope_sections = {'section_scope': 'Scope', 'subsections': [{'section_access': 'Access'}, {'section_reuse': 'Reuse'}]}
+
+  if not reuse is False:
+    scope_sections['subsections'].append({'section_multi_user': 'Users'})
+  else:
+    multi_user = False
+
+  if not multi_user is False:
+    scope_sections['subsections'].append({'section_community': 'Community'})
+  else:
+    community = False
+
+  software_management_sections = {'section_smp': 'Software Management', 'subsections': [{'section_authors': 'Authors'}, {'section_ownership': 'Ownership'}, {'section_context': 'Context'}]}
+
+  if not public is False:
+    software_management_sections['subsections'].append({'section_citation': 'Citation'})
+
+  software_management_sections['subsections'].append({'section_versioning': 'Versioning'})
+
+  if not public is False:
+    software_management_sections['subsections'].append({'section_license': 'License'})
+
+  if not (public is False) or not (reuse is False) or not (multi_user is False):
+    software_management_sections['subsections'].append({'section_documentation': 'Documentation'})
+
+  if not multi_user is False:
+    software_management_sections['subsections'].append({'section_maintenance': 'Maintenance'})
+
+  if not community is False:
+    software_management_sections['subsections'].append({'section_sustainability': 'Sustainability'})
+    software_management_sections['subsections'].append({'section_support': 'Support'})
+
+  if not (reuse is False) or not (multi_user is False):
+    software_management_sections['subsections'].append({'section_quality': 'Quality'})
+
+  if not reuse is False:
+    software_management_sections['subsections'].append({'section_packaging': 'Packaging'})
+
+  software_management_sections['subsections'].append({'section_risks': 'Risks'})
+  software_management_sections['subsections'].append({'section_dmp': 'DMP'})
+
+  the_sections =  [{'section_introduction': 'Introduction'}, {'section_name_purpose': 'Name & Purpose'}] + [scope_sections, software_management_sections]
+  nav.set_sections(the_sections)
+
+  navigation_recalculated = True
+---
+sections:
+  - section_introduction: Introduction
+  - section_name_purpose: Name & Purpose
+#  - Scope:
+#    - section_access: Access
+#    - section_reuse: Reuse
+#    - section_multi_user: Users
+#    - section_community: Community
+#  - Software Management:
+#    - section_authors: Authors
+#    - section_ownership: Ownership
+#    - section_context: Context
+#    - section_citation: Citation
+#    - section_versioning: Versioning
+#    - section_license: License
+#    - section_documentation: Documentation
+#    - section_maintenance: Maintenance
+#    - section_sustainability: Sustainability
+#    - section_support: Support
+#    - section_quality: Quality
+#    - section_packaging: Packaging
+#    - section_risks: Risks
+#    - section_dmp: DMP
 ---
 ### Start questionnaire
 include:

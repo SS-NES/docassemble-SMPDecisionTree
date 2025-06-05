@@ -1,5 +1,6 @@
 ---
 mandatory: True
+section: section_risks
 question: |
   Risk Analysis
 subquestion: |
@@ -18,4 +19,8 @@ fields:
     hint: Right now our university department discourages the use of our ChatGPT software to filter new applicants. We are actively working with management to change that.
     input type: area
     rows: 10
+---
+# When clicking on the navigation section "Risks", ask again the question that defines the variable `risk_analysis`.
+event: section_risks
+code: force_ask('risk_analysis')
 ---

@@ -1,5 +1,6 @@
 ---
 mandatory: public or reuse or multi_user
+section: section_documentation
 question: |
   Documentation
 subquestion: |
@@ -55,4 +56,7 @@ fields:
     input type: area
     rows: 10
 ---
-
+# When clicking on the navigation section "Documentation", ask again the question that defines the variable `documentation`.
+event: section_documentation
+code: force_ask('user_documentation')
+---
