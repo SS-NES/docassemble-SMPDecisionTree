@@ -1,5 +1,6 @@
 ---
 mandatory: True
+section: section_versioning
 question: |
   Version Control
 subquestion: |
@@ -65,4 +66,8 @@ fields:
     rows: 10
     show if:
       code: public or reuse
+---
+# When clicking on the navigation section "Versioning", ask again the question that defines the variable `version_scheme`.
+event: section_versioning
+code: force_ask('version_scheme')
 ---

@@ -1,5 +1,11 @@
 ---
 mandatory: True
+section: section_reuse
+# When setting the `reuse` variable in this section, we want to recalculate the items in the navigation bar.
+# In the root .yml file there is a code section that sets a dummy `navigation_recalculated` variable.
+# By depending on (`depends on`) this variable here, we force it to be re-evaluated and thus re-run the navigation sections code.
+# TODO This is very clunky. If there's an easier way, feel free to improve this.
+depends on: navigation_recalculated
 question: |
   Reuse/Reproduce
 subquestion: |
@@ -34,4 +40,8 @@ subquestion: |
   </details>
   <br>
 yesno: reuse
+---
+# When clicking on the navigation section "Reuse", ask again the question that defines the variable `reuse`.
+event: section_reuse
+code: force_ask('reuse')
 ---

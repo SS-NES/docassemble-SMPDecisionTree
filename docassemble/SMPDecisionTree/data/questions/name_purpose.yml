@@ -1,5 +1,6 @@
 ---
 mandatory: True
+section: section_name_purpose
 question: |
   Software Name & Purpose
 fields:
@@ -26,4 +27,8 @@ fields:
     hint: This BASH script proves the Hauptvermutung conjecture and generates some visual examples. It is intended to be used by the general math community. We are developing this software because no prior software like this exists since no one else proved the Hauptvermutung.
     input type: area
     rows: 10
+---
+# When clicking on the navigation section "Name & Purpose", ask again the question that defines the variable `software_name`.
+event: section_name_purpose
+code: force_ask('software_name')
 ---

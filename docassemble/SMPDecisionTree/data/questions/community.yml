@@ -1,5 +1,11 @@
 ---
 mandatory: reuse
+section: section_multi_user
+# When setting the `multi_user` variable in this section, we want to recalculate the items in the navigation bar.
+# In the root .yml file there is a code section that sets a dummy `navigation_recalculated` variable.
+# By depending on (`depends on`) this variable here, we force it to be re-evaluated and thus re-run the navigation sections code.
+# TODO This is very clunky. If there's an easier way, feel free to improve this.
+depends on: navigation_recalculated
 question: |
   Users/Collaborators
 subquestion: |
@@ -34,7 +40,12 @@ subquestion: |
   <br>
 yesno: multi_user
 ---
+# When clicking on the navigation section "Users", ask again the question that defines the variable `multi_user`.
+event: section_multi_user
+code: force_ask('multi_user')
+---
 mandatory: multi_user
+section: section_community
 question: |
   Community
 subquestion: |
@@ -63,4 +74,8 @@ terms:
   community: |
     A group of people, generally outside your direct collaborators or contacts, that is using or developing the software (semi-)autonomously.
 yesno: community
+---
+# When clicking on the navigation section "Community", ask again the question that defines the variable `community`.
+event: section_community
+code: force_ask('community')
 ---

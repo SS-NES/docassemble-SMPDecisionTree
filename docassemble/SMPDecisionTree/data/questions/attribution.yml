@@ -1,4 +1,5 @@
 ---
+section: section_authors
 question: |
   Authors
 subquestion: |
@@ -12,6 +13,7 @@ fields:
     hint: jane_doe@example.com
     datatype: email
 ---
+section: section_authors
 mandatory: True
 question: |
   Review Authors
@@ -27,9 +29,23 @@ subquestion: |
   Note: The first person will be used as primary contact.
   ${ authors.table }
   ${ authors.add_action() }
+# Create a hidden field. `force_ask` needs an actual variable definition to jump back to.
+fields:
+  - field: authors_revisited
+    input type: hidden
+    default: "no"
 continue button field: authors_ok
 ---
+# When clicking on the navigation section "Authors", ask again the question that defines the variable `authors_revisited`.
+event: section_authors
+code: force_ask('authors_revisited')
+---
+# When clicking on the navigation section "Authors", ask again the question that defines the variable `authors_revisited`.
+event: section_smp
+code: force_ask('authors_revisited')
+---
 mandatory: True
+section: section_ownership
 question: |
   Ownership
 subquestion: |
@@ -41,7 +57,12 @@ fields:
     hint: University of Springfield, Department of Nuclear Physics
     input type: area
 ---
+# When clicking on the navigation section "Ownership", ask again the question that defines the variable `ownership`.
+event: section_ownership
+code: force_ask('ownership')
+---
 mandatory: True
+section: section_context
 question: |
   Research Project Context
 subquestion: |
@@ -53,7 +74,12 @@ fields:
     input type: area
     rows: 10
 ---
+# When clicking on the navigation section "Context", ask again the question that defines the variable `research_project_context`.
+event: section_context
+code: force_ask('research_project_context')
+---
 mandatory: public
+section: section_citation
 question: |
   Citation
 subquestion: |
@@ -77,4 +103,8 @@ fields:
     hint: "CFF file in the repository (link: ...), DOI on Zenodo (link: ...)"
     input type: area
     rows: 10
+---
+# When clicking on the navigation section "Citation", ask again the question that defines the variable `citation`.
+event: section_citation
+code: force_ask('citation')
 ---
