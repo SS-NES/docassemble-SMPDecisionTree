@@ -27,3 +27,5 @@ filename = "docassemble/SMPDecisionTree/__init__.py"
 [[tool.bumpversion.files]]
 filename = "docassemble/SMPDecisionTree/data/questions/software.yml"
 
+[[tool.bumpversion.files]]
+filename = "CITATION.cff"
