@@ -8,11 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Create release for Zenodo
 
 ### Changed
 
 ### Removed
+
+## [0.0.7] - 2025-08-28
+
+### Added
+- Create release for Zenodo
 
 ## [0.0.6] - 2025-08-28
 
@@ -20,10 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `bump-my-version` support for version releases
 - navigation bar
-
-### Changed
-
-### Removed
 
 ## [0.0.5] - 2025-04-17
 
@@ -60,3 +60,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.0.6]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.6
 [0.0.5]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.5
 [0.0.4]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.4
+
