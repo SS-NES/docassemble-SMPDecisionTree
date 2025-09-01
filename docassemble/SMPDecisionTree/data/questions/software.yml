@@ -23,7 +23,7 @@ features:
 ---
 mandatory: True
 code: |
-  smp_decision_tree_version = "0.0.6"
+  smp_decision_tree_version = "0.0.7"
   community = None
   reuse = None
   multi_user = None

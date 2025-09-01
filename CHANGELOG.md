@@ -9,22 +9,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `bump-my-version` support for version releases
-
 ### Changed
 
 ### Removed
 
-## [0.0.4] - 2024-10-28
+## [0.0.7] - 2025-08-28
 
-- Initial release
+### Added
+- Create release for Zenodo
+
+## [0.0.6] - 2025-08-28
 
 ### Added
 
-- Add SMP Decision Tree version tag to start page
-- Add CHANGELOG.md file
+- `bump-my-version` support for version releases
+- navigation bar
 
-## [0.0.5] - yyyy-mm-dd
+## [0.0.5] - 2025-04-17
 
 - Improved contribution guides.
 - Split questions into separate yml files by concept.
@@ -45,5 +46,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Explained importance of following citation standards.
 - Added motivation for using version control from the start.
 
-[unreleased]: https://github.com/SS-NES/docassemble-SMPDecisionTree/compare/v0.0.4...HEAD
+
+## [0.0.4] - 2024-10-28
+
+- Initial release
+
+### Added
+
+- Add SMP Decision Tree version tag to start page
+- Add CHANGELOG.md file
+
+[unreleased]: https://github.com/SS-NES/docassemble-SMPDecisionTree/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.7
+[0.0.6]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.6
+[0.0.5]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.5
 [0.0.4]: https://github.com/SS-NES/docassemble-SMPDecisionTree/releases/tag/v0.0.4
+
