@@ -191,7 +191,17 @@ attachment:
 ---
 attachment:
   name: Input file for the NLeSC Python Template
-  description: When setting up a new Python project using the [NLeSC Copier Template](https://github.com/NLeSC/python-template), this file can be passed using `--data-file=copier_template_answers.yml` to already fill in some questions.
+  description: |
+    When setting up a new Python project using the [NLeSC Copier Template](https://github.com/NLeSC/python-template), you can reuse information from the SMP to automatically answer some of the asked questions.
+
+    1. Download the `copier_template_answers.yml` file by right-clicking the link below and selecting "Save Link As...".
+    2. Install [copier](https://copier.readthedocs.io/en/stable/#installation)
+    3. Open a terminal and navigate to where your answers file is downloaded
+    4. Create a new project using the following command:
+    `copier copy https://github.com/nlesc/python-template.git \`
+    `<PATH/TO/DESTINATION> --data-file=copier_template_answers.yml`
+
+    Be sure to replace `<PATH/TO/DESTINATION>` with the location of an empty or non-existing folder.
   filename: copier_template_answers
   variable name: template_yml
   raw: True
