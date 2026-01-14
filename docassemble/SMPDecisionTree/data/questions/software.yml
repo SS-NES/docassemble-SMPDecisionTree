@@ -12,6 +12,8 @@ metadata:
       organization: The Netherlands eScience Center
     - name: Thijs van Lankveld
       organization: The Netherlands eScience Center
+  footer: |
+    Feedback? [Open an issue](https://github.com/SS-NES/docassemble-SMPDecisionTree/issues/new) on [our GitHub repo](https://github.com/SS-NES/docassemble-SMPDecisionTree)! You can also find this project on the [Research Software Directory](https://research-software-directory.org/software/smp-decision-tree).
   revision_date: 2025-03-25
   tags:
     - management_plan
