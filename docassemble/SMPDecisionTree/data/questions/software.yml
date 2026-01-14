@@ -153,6 +153,7 @@ include:
 mandatory: True
 question: |
   Software Management Plan
+allow emailing: False
 attachment code: |
   [user_smp, machine_smp, template_yml]
 ---
