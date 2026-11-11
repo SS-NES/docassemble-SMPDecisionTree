@@ -1,14 +1,27 @@
-# YAML 1.2
----
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: SMP Decision Tree
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
+  - {}
   - given-names: Sander
     name-particle: van
     family-names: Rijn
     email: s.vanrijn@esciencecenter.nl
     affiliation: Netherlands eScience Center
     orcid: 'https://orcid.org/0000-0001-6159-041X'
-  - given-names: Bjoern Ole
-    family-names: Mussmann
+  - given-names: Giulio
+    family-names: Rosani
+    email: g.rosani@rug.nl
+    affiliation: University of Groningenorc
+    orcid: 'https://orcid.org/0000-0002-9655-9217'
+  - family-names: Mussmann
+    given-names: Ole
     email: o.mussmann@esciencecenter.nl
     affiliation: Netherlands eScience Center
     orcid: 'https://orcid.org/0000-0002-3803-4287'
@@ -18,15 +31,31 @@ authors:
     email: t.vanlankveld@esciencecenter.nl
     affiliation: Netherlands eScience Center
     orcid: 'https://orcid.org/0009-0001-1147-4813'
-cff-version: "1.2.0"
-#date-released: 2025-00-00
-#doi: 10.5281/zenodo.1310751
+  - given-names: Carlos
+    family-names: Martinez-Ortiz
+    email: c.martinez@esciencecenter.nl
+    affiliation: Netherlands eScience Center
+    orcid: 'https://orcid.org/0000-0001-5565-7577'
+  - given-names: Nami
+    family-names: Sunami
+    email: nsunami@pm.me
+    affiliation: Eindhoven University of Technology
+    orcid: 'https://orcid.org/0000-0001-5482-8370'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17021459
+  - type: swh
+    value: 'swh:1:dir:6c11297f1ed2a6aaf396021f1ffa114aebc7b3aa'
+repository-code: 'https://github.com/SS-NES/docassemble-SMPDecisionTree'
+url: 'https://smp.research.software'
+abstract: >-
+  SMP Decision Tree is a questionnaire based tool for
+  creating a Software Management Plan (SMP).
 keywords:
-  - software management plan
+  - Software Management Plan
   - SMP
   - docassemble
 license: Apache-2.0
-message: "If you use this software, please cite it using these metadata."
-repository-code: "https://github.com/SS-NES/docassemble-SMPDecisionTree"
-title: "SMP Decision Tree"
-version: "0.0.7"
+commit: 7cfe595
+version: v0.0.7
+date-released: '2025-09-01'
